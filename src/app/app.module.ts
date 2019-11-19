@@ -12,11 +12,15 @@ import { MatInputModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { MovieCardComponent } from './movie-card/movie-card.component';
+import {MatCardModule} from '@angular/material/card'
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CalendarComponent
+    CalendarComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
+    MatCardModule
     
   ],
   providers: [],
