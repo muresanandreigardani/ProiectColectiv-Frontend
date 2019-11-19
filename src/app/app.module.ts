@@ -15,6 +15,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { LoginComponent } from './components/login/login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
+import { MovieCardComponent } from './movie-card/movie-card.component';
+import {MatCardModule} from '@angular/material/card'
+
 import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     CalendarComponent,
     LoginComponent
+    MovieCardComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -41,6 +45,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
+    MatCardModule
     
   ],
   providers: [],
