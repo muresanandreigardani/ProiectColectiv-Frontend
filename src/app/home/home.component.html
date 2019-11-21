@@ -1,1 +1,5 @@
-<app-movie-card title="My Title sssss eeeeeeeeeee" image="http://snagfilms-a.akamaihd.net/34/83/5f9428234ea78a2724706064f3a1/oncoalriver-214x317.jpg?impolicy=resize&w=300&h=444"></app-movie-card>
+<slideshow [height]="height" [minHeight]="'525px'" [autoPlay]="true" [showArrows]="false"
+    [lazyLoad]="imagesUrl?.length > 1" [autoPlayWaitForLazyLoad]="true" [imageUrls]="imagesUrl()">
+</slideshow>
+<app-carousel title="Filme" [movieList]="movies"></app-carousel>
+<app-carousel title="Seriale" [movieList]="series"></app-carousel>
