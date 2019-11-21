@@ -3,13 +3,15 @@ import { Time } from '@angular/common';
 export interface SeasonInterface {
     name: string,
     description: string,
-    noEpisodes: number
+    noEpisodes: number,
+    image: string
 }
 
 export interface EpisodeInterface {
     name: string,
     description: string,
     duration: string,
+    image: string
 }
 
 export interface TvSeriesInterface {
@@ -17,11 +19,13 @@ export interface TvSeriesInterface {
     name: string,
     releaseDate: Date,
     noEpisodes: number,
-    noSeasons: number
+    noSeasons: number,
+    image: string;
 }
 
 export class TvSeries implements TvSeriesInterface {
-    id: number;    
+    image: string;
+    id: number;
     name: string;
     releaseDate: Date;
     noEpisodes: number;
@@ -29,12 +33,14 @@ export class TvSeries implements TvSeriesInterface {
 }
 
 export class Season implements SeasonInterface {
-    name: string;    
+    image: string;
+    name: string;
     description: string;
     noEpisodes: number;
 }
 
 export class Episode implements EpisodeInterface {
+    image: string;
     name: string;
     description: string;
     duration: string;
