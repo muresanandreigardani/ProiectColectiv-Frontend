@@ -1,6 +1,10 @@
-<mat-grid-list cols={{breakpoint}} rowHeight="1:2" (window:resize)="onResize($event)" [gutterSize]="0">
-  <mat-grid-tile class="custom-mat-grid-tile" *ngFor="let serial of series">
-    <app-movie-card [title]="serial.name" [image]="serial.image" [noSeasons]="serial.noSeasons"
-      [noEpisodes]="serial.noEpisodes"></app-movie-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="app">
+  <div class="container">
+    <mat-grid-list cols={{breakpoint}} rowHeight="1:2" (window:resize)="onResize($event)" [gutterSize]="0">
+      <mat-grid-tile class="custom-mat-grid-tile" *ngFor="let serial of series">
+        <app-movie-card [title]="serial.name" [image]="serial.image" [noSeasons]="serial.noSeasons"
+          [noEpisodes]="serial.noEpisodes"></app-movie-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
