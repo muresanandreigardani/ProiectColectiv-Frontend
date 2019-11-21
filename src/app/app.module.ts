@@ -12,7 +12,6 @@ import { MatInputModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { MovieCardComponent } from './movie-card/movie-card.component';
 import { LoginComponent } from './components/login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card'
@@ -26,7 +25,7 @@ import { SlideshowModule } from 'ng-simple-slideshow';
   declarations: [
     AppComponent,
     HomeComponent,
-    CalendarComponent
+    CalendarComponent,
     LoginComponent,
     MovieCardComponent,
     CarouselComponent
