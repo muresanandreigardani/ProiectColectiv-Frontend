@@ -2,15 +2,19 @@
     .left-part-of-navbar {
         justify-content: flex-end;
     }
+    .image-logo {
+        width: 100px;
+    }
+    .menu{
+        background-color: blue;
+        color: white;
+        //#42350F;
+    }
+    
+    .menu a{
+        font-size: large;
+    }
 }
 
 
-.menu{
-    background-color: #FF6249;
-    color: white;
-    //#42350F;
-}
 
-.menu a{
-    font-size: large;
-}

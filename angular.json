@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
-              "src/favicon.ico",
+              "src/bwBun.png",
               "src/assets"
             ],
             "styles": [
@@ -89,7 +89,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
+              "src/bwBun.png",
               "src/assets"
             ],
             "styles": [
@@ -124,6 +124,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ProiectColectiv-Frontend"
 }
