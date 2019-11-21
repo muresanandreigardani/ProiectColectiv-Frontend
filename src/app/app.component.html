@@ -1,7 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="menu">
   <mat-toolbar-row>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <h1>BingeWatch</h1>
+    <img class="image-logo" src="../assets/bw3.png">
     <span class="menu-spacer"></span>
     <div>
       <a mat-button [routerLink]="['/home']"> Home </a>
@@ -9,25 +8,25 @@
       <a mat-button [routerLink]="['/contacts']"> TV Shows </a>
       <a mat-button [routerLink]="['/create-contact']"> Movies </a>
     </div>
-        <div class="left-part-of-navbar">
-          <mat-form-field>
-              <input matInput placeholder="Search">
-            </mat-form-field>
-                  <button mat-icon-button [matMenuTriggerFor]="menu">
-                      <mat-icon>person_pin</mat-icon>
-                    </button>
-                    <mat-menu #menu="matMenu">
-                      <button mat-menu-item>
-                        <span>My Profile</span>
-                      </button>
+    <div class="left-part-of-navbar">
+      <mat-form-field>
+        <input matInput placeholder="Search">
+      </mat-form-field>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>person_pin</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>My Profile</span>
+        </button>
                       <button mat-menu-item (click) = "loginPush()">
-                        <span>Login</span>
-                      </button>
-                      <button mat-menu-item>
-                        <span>Logout</span>
-                      </button>
-                    </mat-menu>
-        </div>
+          <span>Login</span>
+        </button>
+        <button mat-menu-item>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
