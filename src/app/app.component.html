@@ -5,7 +5,7 @@
     <div>
       <a mat-button [routerLink]="['/home']"> Home </a>
       <a mat-button [routerLink]="['/calendar']"> Calendar </a>
-      <a mat-button [routerLink]="['/contacts']"> TV Shows </a>
+      <a mat-button [routerLink]="['/tvshows']"> TV Shows </a>
       <a mat-button [routerLink]="['/create-contact']"> Movies </a>
     </div>
     <div class="left-part-of-navbar">
@@ -19,7 +19,7 @@
         <button mat-menu-item>
           <span>My Profile</span>
         </button>
-                      <button mat-menu-item (click) = "loginPush()">
+        <button mat-menu-item (click)="loginPush()">
           <span>Login</span>
         </button>
         <button mat-menu-item>

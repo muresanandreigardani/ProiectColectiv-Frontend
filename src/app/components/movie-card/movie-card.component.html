@@ -1,8 +1,14 @@
 <div class="card-for-film">
-    <div class="img-card">
-        <img class="img-class" src="{{image}}">
-    </div>
-    <div class="title-card">
-        <span>{{title}}</span>
-    </div>
+  <div class="img-card">
+    <img class="img-class" src="{{image}}">
+  </div>
+  <div class="title-card">
+    <span>{{title}}</span>
+  </div>
+  <div *ngIf="noSeasons > 0" class="serial-card">
+    <span>Seasons : {{noSeasons}}</span>
+  </div>
+  <div *ngIf="noEpisodes > 0" class="serial-card">
+    <span>Episodes : {{noEpisodes}}</span>
+  </div>
 </div>
