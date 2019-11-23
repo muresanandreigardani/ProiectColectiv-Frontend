@@ -24,7 +24,13 @@ const routes: Routes = [
   },
   {
     path: "tvshows",
-    component: TvShowsComponent
+    component: TvShowsComponent,
+    data: { type: "tvshows" }
+  },
+  {
+    path: "movies",
+    component: TvShowsComponent,
+    data: { type: "movies" }
   }
 ];
 
