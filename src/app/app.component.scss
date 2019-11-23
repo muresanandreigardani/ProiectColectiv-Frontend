@@ -7,7 +7,21 @@
   color: white;
   //#42350F;
 
-  .menu a {
-    font-size: large;
+  .menu-section a {
+    font-size: 1.2rem;
+    padding: .7em;
+  }
+
+  .menu-section a:hover {
+    padding-bottom: .5em;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  .search-input {
+    font-size: 1rem;
+  }
+
+  .placeholder {
+    font-size: 1rem;
   }
 }
