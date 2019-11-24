@@ -1,11 +1,11 @@
 <div class="detail-for-carousel">
-    <div class="title">
-        {{title}}
-    </div>
-    <mat-divider class="devider"></mat-divider>
+  <div class="title">
+    {{title}}
+  </div>
+  <mat-divider class="devider"></mat-divider>
 </div>
 <ngx-slick-carousel class="carousel" #carousel #slickModal="slick-carousel" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let movie of movieList" class="slide">
-        <app-movie-card [title]="movie.name" [image]="movie.image"></app-movie-card>
-    </div>
+  <div ngxSlickItem *ngFor="let movie of movieList" class="slide">
+    <app-movie-card [item]="movie"></app-movie-card>
+  </div>
 </ngx-slick-carousel>

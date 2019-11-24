@@ -7,11 +7,5 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class MovieCardComponent {
   @Input()
-  public title: string;
-  @Input()
-  public image: string;
-  @Input()
-  public noSeasons: number;
-  @Input()
-  public noEpisodes: number;
+  public item: any;
 }
