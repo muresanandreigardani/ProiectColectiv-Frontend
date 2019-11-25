@@ -1,0 +1,11 @@
+:host {
+  .list-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .slides a {
+    width: 100%;
+  }
+}

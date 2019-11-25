@@ -1,0 +1,42 @@
+<div class="profile">
+  <div class="container">
+    <h1>{{user.name}}' profile</h1>
+    <div class="user-details">
+      <h2>Account Details</h2>
+      <h3>Email : {{user.email}}</h3>
+      <h3>User Role : {{user.userRole}}</h3>
+      <button class="friend-btn show-btn" (click)="changeData(user.id)">Show my movies and series</button>
+    </div>
+
+    <div>
+      <h1>Friends</h1>
+      <div class="friends grid-list" [class.show]="showFriends">
+        <div *ngFor="let friend of friends" class="friend-card">
+          <h4>{{friend.name}}</h4>
+          <button class="friend-btn show-btn" (click)="changeData(friend.id)">Show movies and series</button>
+        </div>
+      </div>
+      <button class="show-btn"
+        (click)="showFriends = !showFriends">{{ showFriends ? 'Show less': 'Show More' }}</button>
+    </div>
+
+    <div>
+      <h1>Movies</h1>
+      <div class="movies grid-list" [class.show]="showMovies">
+        <div *ngFor="let movie of movies">
+          <app-movie-card [item]="movie"></app-movie-card>
+        </div>
+      </div>
+      <button class="show-btn" (click)="showMovies = !showMovies">{{ showMovies ? 'Show less': 'Show More' }}</button>
+    </div>
+    <div>
+      <h1>Series</h1>
+      <div class="series grid-list" [class.show]="showSeries">
+        <div *ngFor="let serie of tvSeries">
+          <app-movie-card [item]="serie"></app-movie-card>
+        </div>
+      </div>
+      <button class="show-btn" (click)="showSeries = !showSeries">{{ showSeries ? 'Show less': 'Show More' }}</button>
+    </div>
+  </div>
+</div>

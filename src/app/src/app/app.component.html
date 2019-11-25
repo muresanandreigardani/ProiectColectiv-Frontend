@@ -1,0 +1,45 @@
+<mat-toolbar class="menu">
+  <mat-toolbar-row class="navbar">
+    <img class="image-logo" src="../assets/bw3.png">
+
+    <div class="menu-section">
+      <a mat-button [routerLink]="['/home']"> Home </a>
+      <a mat-button [routerLink]="['/calendar']"> Calendar </a>
+      <a mat-button [routerLink]="['/tvshows']"> TV Shows </a>
+      <a mat-button [routerLink]="['/movies']"> Movies </a>
+    </div>
+    <div class="left-part-of-navbar">
+      <mat-form-field floatLabel="never">
+        <input class="search-input" matInput maxlength="100">
+        <mat-placeholder class="placeholder">Search</mat-placeholder>
+      </mat-form-field>
+      <button class="account-btn" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>person_pin</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/profile']">
+          <span>My Profile</span>
+        </button>
+        <button mat-menu-item (click)="loginPush()">
+          <span>Login</span>
+        </button>
+        <button mat-menu-item>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+
+      <button class="menu-btn" mat-icon-button [matMenuTriggerFor]="menuResponsive">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menuResponsive="matMenu">
+        <a mat-menu-item [routerLink]="['/home']"> Home </a>
+        <a mat-menu-item [routerLink]="['/calendar']"> Calendar </a>
+        <a mat-menu-item [routerLink]="['/tvshows']"> TV Shows </a>
+        <a mat-menu-item [routerLink]="['/create-contact']"> Movies </a>
+
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

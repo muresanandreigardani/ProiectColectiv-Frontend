@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form>
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+            (ngModelChange)="usernameChange($event)" name="username">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput type="password" [formControl]="passwordFormControl" (ngModelChange)="passwordChange($event)"
+            placeholder="Password" name="password">
+        </mat-form-field>
+      </p>
+
+      <div class="button">
+        <button type="submit" (click)="submit()" mat-button>Login</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
