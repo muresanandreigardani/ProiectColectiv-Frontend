@@ -1,0 +1,63 @@
+.image-logo {
+  width: 100px;
+}
+
+.navbar {
+  justify-content: space-around;
+}
+
+.left-part-of-navbar {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  background-color: blue;
+  color: white;
+  //#42350F;
+
+  .menu-section a {
+    font-size: 1.2rem;
+    padding: .7em;
+  }
+
+  .menu-section a:hover {
+    padding-bottom: .5em;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  .search-input {
+    font-size: 1rem;
+  }
+
+  .placeholder {
+    font-size: 1rem;
+  }
+}
+
+.menu-btn {
+  display: none;
+}
+
+
+
+@media screen and (max-width:780px) {
+  .menu-section {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    .placeholder {
+      font-size: .8rem;
+    }
+
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+}
