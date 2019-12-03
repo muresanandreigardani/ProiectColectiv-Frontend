@@ -1,5 +1,8 @@
 .image-logo {
   width: 100px;
+  margin-top: 10px;
+  height: 70px;
+  margin-left: -5%;
 }
 
 .navbar {
@@ -12,9 +15,13 @@
 }
 
 .menu {
-  background-color: blue;
+  background-color: #215885;
   color: white;
-  //#42350F;
+  border-radius:0 0 0 10px;
+  z-index: 101; 
+  position:sticky;
+  top:0;
+  opacity: 80%;
 
   .menu-section a {
     font-size: 1.2rem;

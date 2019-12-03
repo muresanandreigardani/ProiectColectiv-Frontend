@@ -30,3 +30,30 @@ $ProiectColectiv-Frontend-theme: mat-light-theme($ProiectColectiv-Frontend-prima
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+    /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #131F2B;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;  
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: rgba(0,0,0,0);
+  }
