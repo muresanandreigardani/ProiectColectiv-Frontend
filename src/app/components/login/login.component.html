@@ -5,7 +5,7 @@
       <p>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-            (ngModelChange)="usernameChange($event)" name="username">
+            [(ngModel)]="username" name="username">
           <mat-error class="error" *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
             Please enter a valid email address
           </mat-error>
@@ -16,8 +16,7 @@
       </p>
       <p>
         <mat-form-field>
-          <input type="password" (ngModelChange)="passwordChange($event)" matInput placeholder="Password"
-            name="password">
+          <input type="password" [(ngModel)]="password" matInput placeholder="Password" name="password">
         </mat-form-field>
       </p>
 

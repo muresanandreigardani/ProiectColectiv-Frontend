@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { LoginComponent } from "./components/login/login.component";
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
     path: "movies",
     component: TvShowsComponent,
     data: { type: "movies" }
+  },
+  {
+    path: "admin",
+    component: AdminPageComponent
   }
 ];
 
@@ -38,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

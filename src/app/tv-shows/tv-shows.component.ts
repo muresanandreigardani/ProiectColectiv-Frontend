@@ -1,8 +1,5 @@
-import { TV_SERIES } from "./../apis/binge-watch.mock";
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { TvSeries } from "../models/tvSeries";
-import { Movie } from "../models/movie";
 import * as mockData from "../apis/binge-watch.mock";
 
 @Component({
