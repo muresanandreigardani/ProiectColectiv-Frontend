@@ -3,10 +3,10 @@
     <img class="image-logo" src="../assets/bw3.png">
 
     <div class="menu-section">
-      <a mat-button [routerLink]="['/home']" target="_top"> Home </a>
-      <a mat-button [routerLink]="['/calendar']" target="_top"> Calendar </a>
-      <a mat-button [routerLink]="['/tvshows']" target="_top"> TV Shows </a>
-      <a mat-button [routerLink]="['/movies']" target="_top"> Movies </a>
+      <a mat-button (click)="setTab('/home')" target="_top"> Home </a>
+      <a mat-button (click)="setTab('/calendar')" target="_top"> Calendar </a>
+      <a mat-button (click)="setTab('/tvshows')" target="_top"> TV Shows </a>
+      <a mat-button (click)="setTab('/movies')" target="_top"> Movies </a>
     </div>
     <div class="left-part-of-navbar">
       <mat-form-field floatLabel="never">
@@ -17,13 +17,13 @@
         <mat-icon>person_pin</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button (click)="navigateToProfile()" mat-menu-item [disabled]="authService.loginStatus === 0">
           <span>My Profile</span>
         </button>
-        <button mat-menu-item [routerLink]="['/login']">
+        <button mat-menu-item [routerLink]="['/login']" [disabled]="authService.loginStatus != 0">
           <span>Login</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="logout()" [disabled]="authService.loginStatus === 0">
           <span>Logout</span>
         </button>
       </mat-menu>

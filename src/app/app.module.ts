@@ -10,7 +10,8 @@ import {
   MatListModule,
   MatButtonModule,
   MatIconModule,
-  MatGridListModule
+  MatGridListModule,
+  MatSelectModule
 } from "@angular/material";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HttpClientModule } from "@angular/common/http";
@@ -28,6 +29,10 @@ import { SlickCarouselModule } from "ngx-slick-carousel";
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { SlideshowModule } from "ng-simple-slideshow";
 import { TvShowsComponent } from "./tv-shows/tv-shows.component";
+import { UserService } from './services/user.service';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AuthService } from './services/authentication.service';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +42,8 @@ import { TvShowsComponent } from "./tv-shows/tv-shows.component";
     LoginComponent,
     MovieCardComponent,
     CarouselComponent,
-    TvShowsComponent
+    TvShowsComponent,
+    AdminPageComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -60,9 +66,14 @@ import { TvShowsComponent } from "./tv-shows/tv-shows.component";
     MatMenuModule,
     MatCardModule,
     SlickCarouselModule,
-    SlideshowModule
+    SlideshowModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [
+    UserService,
+    AuthService,
+
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
