@@ -1,3 +1,4 @@
+import { ProfileComponent } from "./profile/profile.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
@@ -29,10 +30,9 @@ import { SlickCarouselModule } from "ngx-slick-carousel";
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { SlideshowModule } from "ng-simple-slideshow";
 import { TvShowsComponent } from "./tv-shows/tv-shows.component";
-import { UserService } from './services/user.service';
-import { AdminPageComponent } from './admin-page/admin-page.component';
-import { AuthService } from './services/authentication.service';
-
+import { UserService } from "./services/user.service";
+import { AdminPageComponent } from "./admin-page/admin-page.component";
+import { AuthService } from "./services/authentication.service";
 
 @NgModule({
   declarations: [
@@ -43,7 +43,8 @@ import { AuthService } from './services/authentication.service';
     MovieCardComponent,
     CarouselComponent,
     TvShowsComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    ProfileComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -67,13 +68,9 @@ import { AuthService } from './services/authentication.service';
     MatCardModule,
     SlickCarouselModule,
     SlideshowModule,
-    MatSelectModule,
+    MatSelectModule
   ],
-  providers: [
-    UserService,
-    AuthService,
-
-  ],
+  providers: [UserService, AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

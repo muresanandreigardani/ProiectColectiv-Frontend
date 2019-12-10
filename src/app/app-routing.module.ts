@@ -1,11 +1,11 @@
+import { ProfileComponent } from "./profile/profile.component";
 import { TvShowsComponent } from "./tv-shows/tv-shows.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { LoginComponent } from "./components/login/login.component";
-import { AdminPageComponent } from './admin-page/admin-page.component';
-
+import { AdminPageComponent } from "./admin-page/admin-page.component";
 const routes: Routes = [
   {
     path: "",
@@ -36,6 +36,11 @@ const routes: Routes = [
   {
     path: "admin",
     component: AdminPageComponent
+  },
+  {
+    path: "user",
+    component: ProfileComponent,
+    data: { token: "token" }
   }
 ];
 
@@ -43,4 +48,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

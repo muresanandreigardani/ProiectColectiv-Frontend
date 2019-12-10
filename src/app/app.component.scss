@@ -14,13 +14,22 @@
   align-items: center;
 }
 
+.navbar {
+  justify-content: space-around;
+}
+
+.left-part-of-navbar {
+  display: flex;
+  align-items: center;
+}
+
 .menu {
   background-color: #215885;
   color: white;
-  border-radius:0 0 0 10px;
-  z-index: 101; 
-  position:sticky;
-  top:0;
+  border-radius: 0 0 0 10px;
+  z-index: 101;
+  position: sticky;
+  top: 0;
   opacity: 80%;
 
   .menu-section a {

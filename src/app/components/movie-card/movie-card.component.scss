@@ -1,8 +1,10 @@
 :host {
   color: white;
+  $width: 250px;
+  $heigth: 320px;
 
   .card-for-film {
-    width: 180px;
+    width: 250px;
     opacity: 1;
     filter: alpha(opacity=100);
     cursor: pointer;
@@ -15,12 +17,14 @@
     height: 250px;
   }
 
+  .img-card,
   .img-class {
-    width: 180px;
-    height: 250px;
+    width: $width;
+    height: $heigth;
   }
 
   .title-card {
+    margin: .8em 0;
     text-align: center;
     overflow: hidden;
   }
@@ -56,10 +60,10 @@
     height: 100%;
     border: 1px solid #ffffff;
     transition: 0.5s;
-    overflow-y: scroll;
+    // overflow-y: scroll;
   }
 
-    /* width */
+  /* width */
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -71,7 +75,7 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: white;  
+    background: white;
     border-radius: 5px;
   }
 
@@ -81,7 +85,7 @@
   }
 
   ::-webkit-scrollbar-corner {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
   }
 
 }
