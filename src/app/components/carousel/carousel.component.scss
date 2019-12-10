@@ -1,36 +1,51 @@
-:host{
-    .detail-for-carousel{
-        margin: 0 45px 0 45px;
-        .devider {
-            background-color: white;
-            margin: 10px 0 15px 0;
-        }
-        .title {
-            font-size: medium;
-            color: white;
-        }
+:host {
+  .detail-for-carousel {
+    margin: 0 45px 0 45px;
 
+    .devider {
+      background-color: white;
+      margin: 10px 0 15px 0;
     }
-    .carousel {
-        background-color: black;
-        margin: 0 20px 0 20px;
+
+    .title {
+      font-size: 1.4rem;
+      color: white;
     }
+
+  }
+
+  .slide {
+    width: 260px !important;
+    height: 100%;
+  }
+
+  .carousel {
+    background-color: black;
+    margin: 0 20px;
+    // height: 100%;
+    max-height: 360px;
+    overflow: hidden;
+  }
+
 }
 
 ::ng-deep {
-    .slick-prev {
-        z-index: 222;
-        left: -20px !important;
-    }
-    .slick-prev::before {
-        font-size: 35px !important;
-    }
-    .slick-next {
-        z-index: 222;
-        right: 15px !important;
-        font-size: 35px !important;
-    }
-    .slick-next::before {
-        font-size: 35px !important;
-    }
+  .slick-prev {
+    z-index: 222;
+    left: 0;
+  }
+
+  .slick-prev::before {
+    font-size: 35px !important;
+  }
+
+  .slick-next {
+    z-index: 222;
+    right: 15px !important;
+    font-size: 35px !important;
+  }
+
+  .slick-next::before {
+    font-size: 35px !important;
+  }
 }

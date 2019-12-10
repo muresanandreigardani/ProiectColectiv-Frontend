@@ -28,6 +28,7 @@ import { SlickCarouselModule } from "ngx-slick-carousel";
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { SlideshowModule } from "ng-simple-slideshow";
 import { TvShowsComponent } from "./tv-shows/tv-shows.component";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TvShowsComponent } from "./tv-shows/tv-shows.component";
     LoginComponent,
     MovieCardComponent,
     CarouselComponent,
-    TvShowsComponent
+    TvShowsComponent,
+    ProfileComponent
   ],
   imports: [
     ReactiveFormsModule,

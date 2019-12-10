@@ -2,6 +2,15 @@
   width: 100px;
 }
 
+.navbar {
+  justify-content: space-around;
+}
+
+.left-part-of-navbar {
+  display: flex;
+  align-items: center;
+}
+
 .menu {
   background-color: blue;
   color: white;
@@ -23,5 +32,32 @@
 
   .placeholder {
     font-size: 1rem;
+  }
+}
+
+.menu-btn {
+  display: none;
+}
+
+
+
+@media screen and (max-width:780px) {
+  .menu-section {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    .placeholder {
+      font-size: .8rem;
+    }
+
+  }
+
+  .navbar {
+    justify-content: space-between;
   }
 }

@@ -1,14 +1,34 @@
 <div class="card-for-film">
-  <div class="img-card">
-    <img class="img-class" src="{{image}}">
+  <div class="minimal-details">
+    <div class="img-card">
+      <img class="img-class" src="{{ item.image }}" />
+    </div>
+    <div class="title-card">
+      <span>{{ item.name }}</span>
+    </div>
+    <div *ngIf="item.noSeasons > 0" class="serial-card">
+      <span>Seasons : {{ item.noSeasons }}</span>
+    </div>
+    <div *ngIf="item.noEpisodes > 0" class="serial-card">
+      <span>Episodes : {{ item.noEpisodes }}</span>
+    </div>
   </div>
-  <div class="title-card">
-    <span>{{title}}</span>
-  </div>
-  <div *ngIf="noSeasons > 0" class="serial-card">
-    <span>Seasons : {{noSeasons}}</span>
-  </div>
-  <div *ngIf="noEpisodes > 0" class="serial-card">
-    <span>Episodes : {{noEpisodes}}</span>
+  <div class="hover-details">
+    <div>
+      <h1>{{ item.name }}</h1>
+      <p class="description-paragraph">
+        Description :
+        {{
+          item.description
+        }}
+      </p>
+      <div *ngIf="item.noSeasons > 0" class="serial-details">
+        <p>Seasons : {{ item.noSeasons }}</p>
+        <p>Episodes : {{ item.noEpisodes }}</p>
+      </div>
+      <h3>Author : {{ item.author }}</h3>
+      <p>Duration : {{ item.duration }} min</p>
+      <p>Release year : {{ item.releaseDate.getFullYear() }}</p>
+    </div>
   </div>
 </div>

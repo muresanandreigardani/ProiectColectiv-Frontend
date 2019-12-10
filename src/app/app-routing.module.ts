@@ -1,3 +1,4 @@
+import { ProfileComponent } from "./profile/profile.component";
 import { TvShowsComponent } from "./tv-shows/tv-shows.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
@@ -24,7 +25,17 @@ const routes: Routes = [
   },
   {
     path: "tvshows",
-    component: TvShowsComponent
+    component: TvShowsComponent,
+    data: { type: "tvshows" }
+  },
+  {
+    path: "movies",
+    component: TvShowsComponent,
+    data: { type: "movies" }
+  },
+  {
+    path: "profile",
+    component: ProfileComponent
   }
 ];
 
