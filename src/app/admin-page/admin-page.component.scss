@@ -1,0 +1,48 @@
+:host {
+
+    .content {
+        display: grid;
+        grid-template-areas:
+            'movieCard actionUserCard'
+            'serialCard seasonCard'
+
+        ;
+        grid-gap: 10px;
+        .add-movie-card {
+            max-width: 700px;
+            text-align: center;
+            grid-area: movieCard;
+        }
+
+        .action-to-user {
+            text-align: center;
+            display: grid;
+            grid-area: actionUserCard;;
+        }
+
+        .add-serial-card {
+            text-align: center;
+            grid-area: serialCard;
+        }
+
+        .add-season-card {
+            text-align: center;
+            grid-area: seasonCard;
+        }
+
+    
+        mat-form-field {
+            margin: 0 10px;
+        }
+
+        mat-card {
+            margin: 15px;
+        }
+    
+        .add-movie-button {
+            width: 350px;
+            color: white;
+            background-color: dodgerblue;
+        }
+    }
+}

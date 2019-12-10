@@ -5,7 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { LoginComponent } from "./components/login/login.component";
-
+import { AdminPageComponent } from "./admin-page/admin-page.component";
 const routes: Routes = [
   {
     path: "",
@@ -34,8 +34,13 @@ const routes: Routes = [
     data: { type: "movies" }
   },
   {
-    path: "profile",
-    component: ProfileComponent
+    path: "admin",
+    component: AdminPageComponent
+  },
+  {
+    path: "user",
+    component: ProfileComponent,
+    data: { token: "token" }
   }
 ];
 

@@ -4,7 +4,7 @@ import { Component, OnInit } from "@angular/core";
 import { TvSeries } from "../models/tvSeries";
 import { Movie } from "../models/movie";
 import * as mockData from "../apis/binge-watch.mock";
-import { MOVIE_LIST } from "ProiectColectiv-Frontend/src/app/apis/binge-watch.mock";
+import { MOVIE_LIST } from "../apis/binge-watch.mock";
 
 @Component({
   selector: "app-tv-shows",

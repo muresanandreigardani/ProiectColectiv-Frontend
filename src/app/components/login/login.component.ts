@@ -6,6 +6,10 @@ import {
   NgForm
 } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material";
+import { UserService } from "src/app/services/user.service";
+import { LoginResponse } from "src/app/models/project.enum";
+import { Router } from "@angular/router";
+import { AuthService } from "src/app/services/authentication.service";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -31,6 +35,12 @@ export class LoginComponent {
   public username: "";
   public password: "";
 
+  public constructor(
+    private userService: UserService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
+
   emailFormControl = new FormControl("", [
     Validators.required,
     Validators.email
@@ -39,14 +49,22 @@ export class LoginComponent {
 
   passwordFormControl = new FormControl("", [Validators.required]);
   public submit() {
-    alert(this.username + " " + this.password);
-  }
-
-  public usernameChange($event) {
-    this.username = $event;
-  }
-
-  public passwordChange($event) {
-    this.password = $event;
+    let response;
+    this.userService.login(this.username, this.password).subscribe(data => {
+      response = JSON.parse(data);
+    });
+    if (response === LoginResponse.Admin) {
+      this.authService.loginStatus = LoginResponse.Admin;
+      this.router.navigate(["/admin"]);
+    } else {
+      if (response === LoginResponse.User) {
+        this.authService.loginStatus = LoginResponse.User;
+        this.router.navigate(["/user"]);
+      } else {
+        alert("Authentication failed!");
+        this.username = "";
+        this.password = "";
+      }
+    }
   }
 }

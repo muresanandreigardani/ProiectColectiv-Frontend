@@ -4,12 +4,17 @@
   $heigth: 320px;
 
   .card-for-film {
-    width: $width;
+    width: 250px;
     opacity: 1;
     filter: alpha(opacity=100);
     cursor: pointer;
     position: relative;
     z-index: 100;
+  }
+
+  .img-card {
+    width: 180px;
+    height: 250px;
   }
 
   .img-card,
@@ -44,10 +49,6 @@
 
   }
 
-  .description-paragraph {
-    overflow-wrap: break-word;
-  }
-
   .card-for-film:hover .hover-details {
     display: block;
     position: absolute;
@@ -59,5 +60,32 @@
     height: 100%;
     border: 1px solid #ffffff;
     transition: 0.5s;
+    // overflow-y: scroll;
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+  }
+
 }

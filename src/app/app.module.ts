@@ -1,3 +1,4 @@
+import { ProfileComponent } from "./profile/profile.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
@@ -10,7 +11,8 @@ import {
   MatListModule,
   MatButtonModule,
   MatIconModule,
-  MatGridListModule
+  MatGridListModule,
+  MatSelectModule
 } from "@angular/material";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HttpClientModule } from "@angular/common/http";
@@ -28,7 +30,9 @@ import { SlickCarouselModule } from "ngx-slick-carousel";
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { SlideshowModule } from "ng-simple-slideshow";
 import { TvShowsComponent } from "./tv-shows/tv-shows.component";
-import { ProfileComponent } from './profile/profile.component';
+import { UserService } from "./services/user.service";
+import { AdminPageComponent } from "./admin-page/admin-page.component";
+import { AuthService } from "./services/authentication.service";
 
 @NgModule({
   declarations: [
@@ -39,6 +43,7 @@ import { ProfileComponent } from './profile/profile.component';
     MovieCardComponent,
     CarouselComponent,
     TvShowsComponent,
+    AdminPageComponent,
     ProfileComponent
   ],
   imports: [
@@ -62,9 +67,10 @@ import { ProfileComponent } from './profile/profile.component';
     MatMenuModule,
     MatCardModule,
     SlickCarouselModule,
-    SlideshowModule
+    SlideshowModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [UserService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
