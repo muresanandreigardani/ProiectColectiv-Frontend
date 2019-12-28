@@ -1,6 +1,23 @@
 import { Movie } from "../models/movie";
 import { TvSeries } from "../models/tvSeries";
 
+export const Genres = [
+  'Action',
+  'Animation',
+  'Comedy',
+  'Crime',
+  'Drama',
+  'Experimental',
+  'Fantasy',
+  'Historical',
+  'Horror',
+  'Romance',
+  'Science Fiction',
+  'Thriller',
+  'Western',
+  'Other'
+]
+
 export const MOVIE_LIST: Movie[] = [
   {
     name: "Hotel Terminus: The Life and Times of Klaus Barbie",
