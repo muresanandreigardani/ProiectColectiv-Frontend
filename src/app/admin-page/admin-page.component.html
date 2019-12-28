@@ -1,97 +1,126 @@
 <div class="content">
-    <mat-card class="add-movie-card">
-        <mat-card-title>Add New Movie</mat-card-title>
-        <mat-form-field>
-            <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="name">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Duration</mat-label>
-            <input matInput [(ngModel)]="duration">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>ReleaseDate</mat-label>
-            <input matInput [(ngModel)]="releaseDate">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Author</mat-label>
-            <input matInput [(ngModel)]="author">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Description</mat-label>
-            <input matInput [(ngModel)]="description">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Image URL</mat-label>
-            <input matInput [(ngModel)]="image">
-        </mat-form-field>
-        <button mat-button class="add-movie-button">Add</button>
-    </mat-card>
 
     <mat-card class="action-to-user">
         <mat-card-title>Block/Remove User</mat-card-title>
         <mat-form-field>
             <mat-label>User</mat-label>
-            <input matInput [(ngModel)]="user">
+            <input matInput [(ngModel)]="user.email">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Action to User</mat-label>
-            <mat-select [(ngModel)]="actionUser">
-                <mat-option [value]="Blocked">Blocked</mat-option>
-                <mat-option [value]="Removed">Removed</mat-option>
+            <mat-select [(ngModel)]="user.userRole">
+                <mat-option [value]="'Blocked'">Blocked</mat-option>
+                <mat-option [value]="'Removed'">Removed</mat-option>
             </mat-select>
         </mat-form-field>
-        <button mat-button class="add-movie-button">Block/Remove</button>
+        <button (click)="removeUser()" mat-button class="add-movie-button">Block/Remove</button>
+    </mat-card>
+
+    <mat-card class="add-movie-card">
+        <mat-card-title>Add New Movie</mat-card-title>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="movie.name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Duration</mat-label>
+            <input matInput [(ngModel)]="movie.duration">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="movie.releaseDate" [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Author</mat-label>
+            <input matInput [(ngModel)]="movie.author">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="movie.description">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Image URL</mat-label>
+            <input matInput [(ngModel)]="movie.image">
+        </mat-form-field>
+        <button (click)="addNewMovie()" mat-button class="add-movie-button">Add</button>
     </mat-card>
 
     <mat-card class="add-serial-card">
         <mat-card-title>Add New Serial</mat-card-title>
         <mat-form-field>
             <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="nameSerial">
+            <input matInput [(ngModel)]="serial.name">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Image URL</mat-label>
-            <input matInput [(ngModel)]="imageSerial">
+            <input matInput [(ngModel)]="serial.image">
         </mat-form-field>
         <mat-form-field>
             <mat-label>No Episodes</mat-label>
-            <input matInput [(ngModel)]="noEpisodesSerial">
+            <input matInput type="number" [(ngModel)]="serial.noEpisodes">
         </mat-form-field>
         <mat-form-field>
             <mat-label>No Seasons</mat-label>
-            <input matInput [(ngModel)]="noSeasonsSerial">
+            <input matInput type="number" [(ngModel)]="serial.noSeasons">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Genres</mat-label>
-            <input matInput [(ngModel)]="genresSerial">
+            <mat-select [(ngModel)]="serial.genres">
+                <mat-option *ngFor='let gender of genres' [value]='gender'>{{gender}}</mat-option>
+            </mat-select>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Director</mat-label>
-            <input matInput [(ngModel)]="directorSerial">
+            <input matInput [(ngModel)]="serial.director">
         </mat-form-field>
-        <button mat-button class="add-movie-button">Add</button>
+        <button (click)="addNewSerial()" mat-button class="add-movie-button">Add</button>
     </mat-card>
 
     <mat-card class="add-season-card">
         <mat-card-title>Add New Season</mat-card-title>
         <mat-form-field>
             <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="nameSeason">
+            <input matInput [(ngModel)]="season.name">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Description</mat-label>
-            <input matInput [(ngModel)]="descSeason">
+            <input matInput [(ngModel)]="season.description">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Number</mat-label>
-            <input matInput [(ngModel)]="numberSeason">
+            <input matInput type="number" [(ngModel)]="season.noEpisodes">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Serial</mat-label>
-            <input matInput [(ngModel)]="serialNameSeason">
+            <mat-select [(ngModel)]="seasonSerial">
+                <mat-option *ngFor='let serial of serialNames' [value]='serial'>{{serial}}</mat-option>
+            </mat-select>
         </mat-form-field>
-        <button mat-button class="add-movie-button">Add</button>
+        <button (click)="addNewSeason()" mat-button class="add-movie-button">Add</button>
+    </mat-card>
+
+    <mat-card class="add-new-episode">
+        <mat-card-title>Add New Episode</mat-card-title>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="episode.name">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput [(ngModel)]="episode.description">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Duration</mat-label>
+            <input matInput type="number" [(ngModel)]="episode.duration">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Serial</mat-label>
+            <mat-select [(ngModel)]="episodeSerial">
+                <mat-option *ngFor='let serial of serialNames' [value]='serial'>{{serial}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button (click)="addNewEpisode()" mat-button class="add-movie-button">Add</button>
     </mat-card>
 
 </div>

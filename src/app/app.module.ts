@@ -12,7 +12,8 @@ import {
   MatButtonModule,
   MatIconModule,
   MatGridListModule,
-  MatSelectModule
+  MatSelectModule,
+  MatNativeDateModule
 } from "@angular/material";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HttpClientModule } from "@angular/common/http";
@@ -33,7 +34,8 @@ import { TvShowsComponent } from "./tv-shows/tv-shows.component";
 import { UserService } from "./services/user.service";
 import { AdminPageComponent } from "./admin-page/admin-page.component";
 import { AuthService } from "./services/authentication.service";
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ApiProvider } from './services/api-provide';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,9 +70,11 @@ import { AuthService } from "./services/authentication.service";
     MatCardModule,
     SlickCarouselModule,
     SlideshowModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [UserService, AuthService],
+  providers: [UserService, AuthService, ApiProvider],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
