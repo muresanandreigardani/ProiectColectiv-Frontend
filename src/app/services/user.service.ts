@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { of, Observable } from "rxjs";
 
 @Injectable()
 export class UserService {
@@ -16,8 +15,5 @@ export class UserService {
     };
   }
 
-  public login(username: string, password: string): Observable<any> {
-    return of(2);
-    // return this.httpClient.post<any>(this.url, { "username": username, "password": password }, this.httpOptions);
-  }
+
 }

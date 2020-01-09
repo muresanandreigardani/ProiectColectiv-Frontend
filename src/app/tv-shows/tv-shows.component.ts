@@ -5,6 +5,7 @@ import { TvSeries } from "../models/tvSeries";
 import { Movie } from "../models/movie";
 import * as mockData from "../apis/binge-watch.mock";
 import { MOVIE_LIST } from "../apis/binge-watch.mock";
+import { ApiProvider } from '../services/api-provide';
 
 @Component({
   selector: "app-tv-shows",
@@ -17,8 +18,12 @@ export class TvShowsComponent implements OnInit {
   public breakpoint: number = 4;
   public ratio: string;
   public type: string;
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private apiProvider: ApiProvider
+  ) {
     this.imagesUrl();
+    this.apiProvider.getAllMovies();
   }
 
   public imagesUrl(): string[] {

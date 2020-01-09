@@ -6,10 +6,11 @@ import {
   NgForm
 } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material";
-import { UserService } from "src/app/services/user.service";
 import { LoginResponse } from "src/app/models/project.enum";
 import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/authentication.service";
+import { ApiProvider } from 'src/app/services/api-provide';
+import { throwError } from 'rxjs';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -36,10 +37,10 @@ export class LoginComponent {
   public password: "";
 
   public constructor(
-    private userService: UserService,
+    private apiProvider: ApiProvider,
     private router: Router,
     private authService: AuthService
-  ) {}
+  ) { }
 
   emailFormControl = new FormControl("", [
     Validators.required,
@@ -50,21 +51,32 @@ export class LoginComponent {
   passwordFormControl = new FormControl("", [Validators.required]);
   public submit() {
     let response;
-    this.userService.login(this.username, this.password).subscribe(data => {
-      response = JSON.parse(data);
-    });
-    if (response === LoginResponse.Admin) {
-      this.authService.loginStatus = LoginResponse.Admin;
-      this.router.navigate(["/admin"]);
-    } else {
-      if (response === LoginResponse.User) {
-        this.authService.loginStatus = LoginResponse.User;
-        this.router.navigate(["/user"]);
-      } else {
-        alert("Authentication failed!");
-        this.username = "";
-        this.password = "";
-      }
-    }
+    this.apiProvider.login(this.username, this.password)
+      .subscribe(data => {
+        console.log(data);
+        const res = data['token'];
+        if (res) {
+          response = LoginResponse.Admin;
+        }
+        console.log(response);
+        this.authService.token = res;
+        if (response === LoginResponse.Admin) {
+          this.authService.loginStatus = LoginResponse.Admin;
+          this.router.navigate(["/admin"]);
+        } else {
+          if (response === LoginResponse.User) {
+            this.authService.loginStatus = LoginResponse.User;
+            this.router.navigate(["/user"]);
+          } else {
+            alert("Authentication failed!");
+            this.username = "";
+            this.password = "";
+          }
+        }
+      });
+
+
+
+
   }
 }
