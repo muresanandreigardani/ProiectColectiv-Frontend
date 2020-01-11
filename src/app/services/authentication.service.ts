@@ -6,4 +6,5 @@ import { LoginResponse } from '../models/project.enum';
 @Injectable()
 export class AuthService {
     loginStatus: LoginResponse = LoginResponse.Fail;
+    token: string = "";
 }
