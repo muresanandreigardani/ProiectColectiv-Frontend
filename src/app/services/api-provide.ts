@@ -29,9 +29,23 @@ export class ApiProvider {
 
     public login(username: string, password: string): Observable<any> {
         console.log(this.url + "authenticate");
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+        });
         return this.httpClient.post<Token>(this.url + "authenticate", { "username": username, "password": password }, this.httpOptions)
             .pipe(
                 catchError(this.handleLoginError)
+            );
+    }
+
+    public register(username: string, password: string): Observable<any> {
+        console.log(this.url + "register");
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+        });
+        return this.httpClient.post<any>(this.url + "register", { "username": username, "password": password }, this.httpOptions)
+            .pipe(
+                catchError(this.handleRegisterError)
             );
     }
 
@@ -41,6 +55,15 @@ export class ApiProvider {
         } else {
             console.error('Server side error:', errorRespone.error.message);
             alert("Authentication failed!");
+        }
+        return throwError('Is an error with the service! Sorry for inconvenience!');
+    }
+    private handleRegisterError(errorRespone: HttpErrorResponse) {
+        if (errorRespone instanceof ErrorEvent) {
+            console.error('Clint side error:', errorRespone.error.message);
+        } else {
+            console.error('Server side error:', errorRespone.error.message);
+            alert("Register failed!");
         }
         return throwError('Is an error with the service! Sorry for inconvenience!');
     }

@@ -3,17 +3,17 @@
         text-align: center;
         margin: 0 240px;
         top: 200px;
-
+        display: flex;
+        flex-direction: column;
         .button {
             width: 350px;
             color: white;
             background-color: dodgerblue;
-            margin-bottom: 5px;
         }
-        .button-register {
+        .button:disabled {
             width: 350px;
             color: white;
-            background-color: dodgerblue;
+            background-color: grey;
         }
 
         mat-form-field {

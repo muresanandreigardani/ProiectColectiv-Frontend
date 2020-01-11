@@ -6,6 +6,7 @@ import { HomeComponent } from "./home/home.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AdminPageComponent } from "./admin-page/admin-page.component";
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 const routes: Routes = [
   {
     path: "",
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "registration",
+    component: UserRegistrationComponent
   },
   {
     path: "tvshows",
@@ -48,4 +53,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

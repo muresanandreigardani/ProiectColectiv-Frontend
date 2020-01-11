@@ -1,0 +1,37 @@
+<mat-card class="card">
+    <mat-card-title class="title">Login</mat-card-title>
+    <mat-card-content>
+        <form>
+            <p>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                        [(ngModel)]="username" name="username">
+                    <mat-error class="error"
+                        *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error class="error" *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" [(ngModel)]="password" matInput placeholder="Password" name="password">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" [(ngModel)]="confirmPassword" matInput placeholder="Confirm Password"
+                        name="confirmPassword">
+                </mat-form-field>
+            </p>
+
+            <div>
+                <button class="button" [disabled]="!password || password !== confirmPassword" (click)="submit()"
+                    mat-button>Register
+                    now</button>
+            </div>
+
+        </form>
+    </mat-card-content>
