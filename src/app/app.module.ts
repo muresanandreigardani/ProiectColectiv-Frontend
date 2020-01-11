@@ -38,6 +38,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ApiProvider } from './services/api-provide';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AlertService } from './services/alert.service';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AlertService } from './services/alert.service';
     CarouselComponent,
     TvShowsComponent,
     AdminPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserRegistrationComponent
   ],
   imports: [
     ReactiveFormsModule,
