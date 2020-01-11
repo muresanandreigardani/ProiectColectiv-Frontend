@@ -36,6 +36,9 @@ import { AdminPageComponent } from "./admin-page/admin-page.component";
 import { AuthService } from "./services/authentication.service";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ApiProvider } from './services/api-provide';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AlertService } from './services/alert.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,9 +75,16 @@ import { ApiProvider } from './services/api-provide';
     SlideshowModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
-  providers: [UserService, AuthService, ApiProvider],
+  providers: [
+    UserService,
+    AuthService,
+    ApiProvider,
+    AlertService,
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

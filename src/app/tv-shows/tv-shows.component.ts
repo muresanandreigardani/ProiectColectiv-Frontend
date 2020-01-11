@@ -1,11 +1,11 @@
-import { TV_SERIES } from "./../apis/binge-watch.mock";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { TvSeries } from "../models/tvSeries";
-import { Movie } from "../models/movie";
 import * as mockData from "../apis/binge-watch.mock";
-import { MOVIE_LIST } from "../apis/binge-watch.mock";
 import { ApiProvider } from '../services/api-provide';
+import { AuthService } from '../services/authentication.service';
+import { MatSnackBar } from '@angular/material';
+import { AlertService } from '../services/alert.service';
+import { Movie } from '../models/movie';
 
 @Component({
   selector: "app-tv-shows",
@@ -20,10 +20,19 @@ export class TvShowsComponent implements OnInit {
   public type: string;
   constructor(
     private route: ActivatedRoute,
-    private apiProvider: ApiProvider
+    private apiProvider: ApiProvider,
+    private authService: AuthService,
+    private router: Router,
+    private alertService: AlertService,
   ) {
-    this.imagesUrl();
-    this.apiProvider.getAllMovies();
+    if (this.authService.token === '') {
+      // alert('You are not authenticate!');
+      this.alertService.openSnackBar('You are not authenticated!', "Cancel");
+      this.router.navigate(['']);
+    }
+    else {
+      this.imagesUrl();
+    }
   }
 
   public imagesUrl(): string[] {
@@ -40,63 +49,47 @@ export class TvShowsComponent implements OnInit {
       this.type = data.type;
     });
 
+    let serverData = [];
     switch (this.type) {
       case "movies":
-        this.data = mockData.MOVIE_LIST;
+        serverData = [];
+        // this.data = mockData.MOVIE_LIST;
+        this.apiProvider.getAllMovies().subscribe(data => {
+          console.log(data);
+          data.forEach(movie => {
+            serverData.push({
+              name: movie['name'],
+              duration: movie['duration'],
+              releaseDate: new Date(),
+              author: movie['director'],
+              description: movie['genres'],
+              image: movie['image']
+            });
+          });
+        });
+        this.data = serverData;
         break;
       case "tvshows":
-        this.data = mockData.TV_SERIES;
+        serverData = [];
+        // this.data = mockData.TV_SERIES;
+        this.apiProvider.getAllSerials().subscribe(data => {
+          console.log(data);
+          data.forEach(series => {
+            serverData.push({
+              id: series["id"],
+              name: series["id"],
+              releaseDate: new Date(),
+              noEpisodes: series["noOfEpisodes"],
+              noSeasons: series["noOfSeasons"],
+              image: series["image"],
+            });
+          });
+        });
+        this.data = serverData;
         break;
       default:
         alert("Ceva fain");
     }
 
-    /* fetch data from server
-    switch (this.type) {
-      case "movie":
-        fetch("url")
-          .then(response => response.json())
-          .then(json => {
-            json.forEach(element => {
-              const movie = {
-                id: element.id,
-                name: element.name,
-                duration: element.duration,
-                releaseDate: element.releaseDate,
-                author: element.author,
-                description: element.description,
-                image: element.image
-              };
-              this.data.push(movie);
-            });
-          })
-          .catch(err => {
-            alert(err);
-          });
-        break;
-      case "tvshows":
-        fetch("url")
-          .then(response => response.json())
-          .then(json => {
-            json.forEach(element => {
-              const serial = {
-                image: element.image,
-                id: element.id,
-                name: element.name,
-                releaseDate: element.releaseDate,
-                noEpisodes: element.noEpisodes,
-                noSeasons: element.noSeasons
-              };
-              this.data.push(serial);
-            });
-          })
-          .catch(err => {
-            alert(err);
-          });
-        break;
-      default:
-        alert("Try to refresh");
-    }
-    */
   }
 }

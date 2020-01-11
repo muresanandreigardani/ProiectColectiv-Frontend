@@ -18,6 +18,7 @@ export class AppComponent {
 
   public logout() {
     this.authService.loginStatus = LoginResponse.Fail;
+    this.authService.token = "";
     this.router.navigate(['']);
   }
 
