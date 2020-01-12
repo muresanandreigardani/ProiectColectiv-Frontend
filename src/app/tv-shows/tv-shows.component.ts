@@ -1,11 +1,11 @@
 import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import * as mockData from "../apis/binge-watch.mock";
-import { ApiProvider } from '../services/api-provide';
-import { AuthService } from '../services/authentication.service';
-import { MatSnackBar } from '@angular/material';
-import { AlertService } from '../services/alert.service';
-import { Movie } from '../models/movie';
+import { ApiProvider } from "../services/api-provide";
+import { AuthService } from "../services/authentication.service";
+import { MatSnackBar } from "@angular/material";
+import { AlertService } from "../services/alert.service";
+import { Movie } from "../models/movie";
 
 @Component({
   selector: "app-tv-shows",
@@ -23,14 +23,13 @@ export class TvShowsComponent implements OnInit {
     private apiProvider: ApiProvider,
     private authService: AuthService,
     private router: Router,
-    private alertService: AlertService,
+    private alertService: AlertService
   ) {
-    if (this.authService.token === '') {
+    if (this.authService.token === "") {
       // alert('You are not authenticate!');
-      this.alertService.openSnackBar('You are not authenticated!', "Cancel");
-      this.router.navigate(['']);
-    }
-    else {
+      this.alertService.openSnackBar("You are not authenticated!", "Cancel");
+      this.router.navigate([""]);
+    } else {
       this.imagesUrl();
     }
   }
@@ -58,12 +57,13 @@ export class TvShowsComponent implements OnInit {
           console.log(data);
           data.forEach(movie => {
             serverData.push({
-              name: movie['name'],
-              duration: movie['duration'],
-              releaseDate: new Date(),
-              author: movie['director'],
-              description: movie['genres'],
-              image: movie['image']
+              name: movie["name"],
+              duration: movie["duration"],
+              releaseYear: movie["releaseYear"],
+              director: movie["director"],
+              genres: movie["genres"],
+              description: movie["description"],
+              image: movie["image"]
             });
           });
         });
@@ -76,20 +76,20 @@ export class TvShowsComponent implements OnInit {
           console.log(data);
           data.forEach(series => {
             serverData.push({
-              id: series["id"],
               name: series["name"],
-              releaseDate: new Date(),
+              director: series["director"],
+              genres: series["genres"],
+              releaseYear: series["releaseYear"],
               noEpisodes: series["noOfEpisodes"],
               noSeasons: series["noOfSeasons"],
-              image: series["image"],
+              image: series["image"]
             });
           });
         });
         this.data = serverData;
         break;
       default:
-        alert("Ceva fain");
+        alert("Something went wrong");
     }
-
   }
 }
