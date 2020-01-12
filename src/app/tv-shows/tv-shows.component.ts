@@ -77,7 +77,7 @@ export class TvShowsComponent implements OnInit {
           data.forEach(series => {
             serverData.push({
               id: series["id"],
-              name: series["id"],
+              name: series["name"],
               releaseDate: new Date(),
               noEpisodes: series["noOfEpisodes"],
               noSeasons: series["noOfSeasons"],

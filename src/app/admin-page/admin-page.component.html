@@ -94,7 +94,7 @@
         <mat-form-field>
             <mat-label>Serial</mat-label>
             <mat-select [(ngModel)]="seasonSerial">
-                <mat-option *ngFor='let serial of serialNames' [value]='serial'>{{serial}}</mat-option>
+                <mat-option *ngFor='let serial of serialNames' [value]='serial'>{{serial.nume}}</mat-option>
             </mat-select>
         </mat-form-field>
         <button (click)="addNewSeason()" mat-button class="add-movie-button">Add</button>
@@ -117,7 +117,7 @@
         <mat-form-field>
             <mat-label>Serial</mat-label>
             <mat-select [(ngModel)]="episodeSerial">
-                <mat-option *ngFor='let serial of serialNames' [value]='serial'>{{serial}}</mat-option>
+                <mat-option *ngFor='let serial of serialNames' [value]='serial'>{{serial.nume}}</mat-option>
             </mat-select>
         </mat-form-field>
         <button (click)="addNewEpisode()" mat-button class="add-movie-button">Add</button>
