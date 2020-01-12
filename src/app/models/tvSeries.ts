@@ -17,20 +17,23 @@ export interface EpisodeInterface {
 export interface TvSeriesInterface {
   id: number;
   name: string;
-  releaseDate: Date;
+  releaseYear: string;
+  description: string;
   noEpisodes: number;
   noSeasons: number;
   image: string;
+  genres: string;
 }
 
 export class TvSeries implements TvSeriesInterface {
-  image: string;
   id: number;
   name: string;
+  genres: string;
+  releaseYear: string;
   description: string;
-  releaseDate: Date;
   noEpisodes: number;
   noSeasons: number;
+  image: string;
 }
 
 export class Season implements SeasonInterface {
