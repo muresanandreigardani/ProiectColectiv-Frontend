@@ -2,28 +2,29 @@ import { Movie } from "../models/movie";
 import { TvSeries } from "../models/tvSeries";
 
 export const Genres = [
-  'Action',
-  'Animation',
-  'Comedy',
-  'Crime',
-  'Drama',
-  'Experimental',
-  'Fantasy',
-  'Historical',
-  'Horror',
-  'Romance',
-  'Science Fiction',
-  'Thriller',
-  'Western',
-  'Other'
-]
+  "Action",
+  "Animation",
+  "Comedy",
+  "Crime",
+  "Drama",
+  "Experimental",
+  "Fantasy",
+  "Historical",
+  "Horror",
+  "Romance",
+  "Science Fiction",
+  "Thriller",
+  "Western",
+  "Other"
+];
 
 export const MOVIE_LIST: Movie[] = [
   {
     name: "Hotel Terminus: The Life and Times of Klaus Barbie",
     duration: 120,
-    releaseDate: new Date(1988),
-    author: "Marcel Ophüls",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A documentary about Klaus Barbie, the Gestapo chief of Lyon, and his life after the war.",
     image:
@@ -32,8 +33,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Alive Inside",
     duration: 78,
-    releaseDate: new Date(2014),
-    author: "Michael Rossato-Bennett",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "Dan Cohen, founder of the nonprofit organization Music & Memory, fights against a broken healthcare system to demonstrate music's ability to combat memory loss and restore a deep sense of self to those suffering from it.",
     image:
@@ -42,8 +44,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Bohemian Rapsody",
     duration: 120,
-    releaseDate: new Date(2018),
-    author: "Bryan Singer",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "The story of the legendary British rock band Queen and lead singer Freddie Mercury, leading up to their famous performance at Live Aid (1985).",
     image:
@@ -52,8 +55,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Once Upon a Time ... in Hollywood",
     duration: 161,
-    releaseDate: new Date(2019),
-    author: "Quentin Tarantino",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A faded television actor and his stunt double strive to achieve fame and success in the film industry during the final years of Hollywood's Golden Age in 1969 Los Angeles.",
     image:
@@ -62,8 +66,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Inception",
     duration: 120,
-    releaseDate: new Date(),
-    author: "Christopher Nolan",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
     image:
@@ -72,8 +77,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Great Gatsby",
     duration: 143,
-    releaseDate: new Date(2013),
-    author: "Baz Luhrmann",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A writer and wall street trader, Nick, finds himself drawn to the past and lifestyle of his millionaire neighbor, Jay Gatsby.",
     image:
@@ -82,8 +88,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Shakespeare in Love",
     duration: 123,
-    releaseDate: new Date(1999),
-    author: "John Madden",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A young Shakespeare, out of ideas and short of cash, meets his ideal woman and is inspired to write one of his most famous plays.",
     image:
@@ -92,8 +99,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Hobbit: An Unexpected Journey",
     duration: 169,
-    releaseDate: new Date(2012),
-    author: "Peter Jackson",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A reluctant Hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home, and the gold within it from the dragon Smaug.",
     image:
@@ -102,8 +110,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Fantastic Beasts and Where to Find Them",
     duration: 132,
-    releaseDate: new Date(2016),
-    author: "David Yates",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "The adventures of writer Newt Scamander in New York's secret community of witches and wizards seventy years before Harry Potter reads his book in school.",
     image:
@@ -112,8 +121,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Harry Potter and the Deathly Hallows: Part 1",
     duration: 146,
-    releaseDate: new Date(2010),
-    author: "David Yates",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "As Harry (Daniel Radcliffe), Ron (Rupert Grint), and Hermione (Emma Watson) race against time and evil to destroy the Horcruxes, they uncover the existence of the three most powerful objects in the wizarding world: the Deathly Hallows.",
     image:
@@ -122,8 +132,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
     duration: 143,
-    releaseDate: new Date(2005),
-    author: "Andrew Adamson",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "Four kids travel through a wardrobe to the land of Narnia and learn of their destiny to free it with the guidance of a mystical lion.",
     image:
@@ -132,8 +143,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Casablanca",
     duration: 102,
-    releaseDate: new Date(1943),
-    author: "Michael Curtiz",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.",
     image:
@@ -142,8 +154,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Life Is Beautiful",
     duration: 116,
-    releaseDate: new Date(1997),
-    author: "Roberto Benigni",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp.",
     image:
@@ -152,8 +165,9 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Breakfast Club",
     duration: 97,
-    releaseDate: new Date(1985),
-    author: "John Hughes",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "Five high school students meet in Saturday detention and discover how they have a lot more in common than they thought.",
     image:
@@ -162,22 +176,13 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Green Book",
     duration: 130,
-    releaseDate: new Date(2018),
-    author: "Peter Farrelly",
+    genres: "romantic",
+    releaseYear: "1988",
+    director: "Marcel Ophüls",
     description:
       "A working-class Italian-American bouncer becomes the driver of an African-American classical pianist on a tour of venues through the 1960s American South.",
     image:
       "https://m.media-amazon.com/images/M/MV5BYzIzYmJlYTYtNGNiYy00N2EwLTk4ZjItMGYyZTJiOTVkM2RlXkEyXkFqcGdeQXVyODY1NDk1NjE@._V1_SY1000_CR0,0,666,1000_AL_.jpg"
-  },
-  {
-    name: "A Beautiful Mind",
-    duration: 135,
-    releaseDate: new Date(2001),
-    author: "Ron Howard",
-    description:
-      "After John Nash, a brilliant but asocial mathematician, accepts secret work in cryptography, his life takes a turn for the nightmarish.",
-    image:
-      "https://m.media-amazon.com/images/M/MV5BMzcwYWFkYzktZjAzNC00OGY1LWI4YTgtNzc5MzVjMDVmNjY0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SY1000_CR0,0,673,1000_AL_.jpg"
   }
 ];
 
@@ -185,7 +190,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 1,
     name: "Friends",
-    releaseDate: new Date(1994),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 10,
     noSeasons: 10,
     description:
@@ -196,7 +202,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 2,
     name: "The Big Bang Theory",
-    releaseDate: new Date(2007),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 24,
     noSeasons: 12,
     description:
@@ -207,7 +214,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 3,
     name: "How I Met Your Mother",
-    releaseDate: new Date(2005),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 22,
     noSeasons: 9,
     description:
@@ -218,7 +226,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 4,
     name: "Family Guy",
-    releaseDate: new Date(1999),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 23,
     noSeasons: 18,
     description:
@@ -229,7 +238,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 5,
     name: "Peaky Blinders",
-    releaseDate: new Date(2013),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 6,
     noSeasons: 7,
     description:
@@ -240,7 +250,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 6,
     name: "Game of Thrones",
-    releaseDate: new Date(2011),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 10,
     noSeasons: 8,
     description:
@@ -251,7 +262,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 7,
     name: "Vikings",
-    releaseDate: new Date(2013),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 9,
     noSeasons: 6,
     description:
@@ -262,7 +274,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 8,
     name: "South Park",
-    releaseDate: new Date(1997),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 9,
     noSeasons: 24,
     description:
@@ -273,7 +286,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 9,
     name: "Sherlock",
-    releaseDate: new Date(2010),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 4,
     noSeasons: 4,
     description:
@@ -284,7 +298,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 10,
     name: "Chernobyl",
-    releaseDate: new Date(2019),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 5,
     noSeasons: 1,
     description:
@@ -295,7 +310,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 11,
     name: "Money Heist",
-    releaseDate: new Date(2017),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 9,
     noSeasons: 4,
     description:
@@ -306,7 +322,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 12,
     name: "Riverdale",
-    releaseDate: new Date(2017),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 13,
     noSeasons: 4,
     description:
@@ -317,7 +334,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 13,
     name: "The Crown",
-    releaseDate: new Date(2016),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 10,
     noSeasons: 4,
     description:
@@ -328,7 +346,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 14,
     name: "House",
-    releaseDate: new Date(2004),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 22,
     noSeasons: 8,
     description:
@@ -339,7 +358,8 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 15,
     name: "Lie to Me",
-    releaseDate: new Date(2009),
+    genres: "romantic",
+    releaseYear: "1988",
     noEpisodes: 13,
     noSeasons: 3,
     description:
