@@ -20,10 +20,10 @@ export class AdminPageComponent {
   public movie: Movie;
   public user: User;
   public season: Season;
-  public episodeSerial: string;
-  public seasonSerial: string;
+  public episodeSerial: any;
+  public seasonSerial: any;
   public episode: Episode;
-  public serialNames: string[];
+  public serialNames: any[] = [];
 
   public constructor(
     private authService: AuthService,
@@ -42,12 +42,25 @@ export class AdminPageComponent {
       this.user = new User();
       this.season = new Season();
       this.episode = new Episode();
-      this.serialNames = this.apiProvider.getSerialsName();
+
+      this.apiProvider.getAllSerials().subscribe(data => {
+        console.log(data);
+        data.forEach(series => {
+          this.serialNames.push({
+            id: series['id'],
+            nume: series['name']
+          });
+        });
+      });
     }
   }
 
   public addNewSerial() {
-    console.log(this.serial);
+
+    this.apiProvider.addSeries(this.serial).subscribe(data => {
+      console.log(data);
+    });
+
     this.serial = new TvSeries();
   }
 
@@ -64,8 +77,11 @@ export class AdminPageComponent {
   public addNewSeason() {
     console.log(this.season);
     console.log(this.seasonSerial);
+    this.apiProvider.addNewSeason(this.season, this.seasonSerial.id).subscribe(data => {
+      console.log(data);
+    });
     this.season = new Season();
-    this.seasonSerial = '';
+    this.seasonSerial = undefined;
   }
 
   public addNewEpisode() {

@@ -6,11 +6,13 @@ import { AuthService } from './authentication.service';
 import { Token } from '../models/Token';
 import { catchError } from 'rxjs/operators';
 import { AlertService } from './alert.service';
+import { TvSeries, Season } from '../models/tvSeries';
 
 @Injectable()
 export class ApiProvider {
     public url = "http://192.168.1.6:8080/";
     public httpOptions;
+    public serials: TvSeries[] = [];
 
     constructor(
         private httpClient: HttpClient,
@@ -24,7 +26,7 @@ export class ApiProvider {
     }
 
     public getSerialsName() {
-        return TV_SERIES.map(x => x.name);
+        return this.getAllSerials();
     }
 
     public login(username: string, password: string): Observable<any> {
@@ -67,6 +69,14 @@ export class ApiProvider {
         }
         return throwError('Is an error with the service! Sorry for inconvenience!');
     }
+    private handleAddError(errorRespone: HttpErrorResponse) {
+        if (errorRespone instanceof ErrorEvent) {
+            console.error('Clint side error:', errorRespone.error.message);
+        } else {
+            console.error('Server side error:', errorRespone.error.message);
+        }
+        return throwError('Is an error with the service! Sorry for inconvenience!');
+    }
 
     public getAllMovies(): Observable<any> {
         console.log('---------------------------------all Movies');
@@ -80,7 +90,7 @@ export class ApiProvider {
     }
 
     public getAllSerials(): Observable<any> {
-        console.log('---------------------------------all Serials');
+        console.log('---------------------------------all Series');
         console.log(this.authService.token);
         this.httpOptions.headers = new HttpHeaders({
             "Content-Type": "application/json",
@@ -88,6 +98,48 @@ export class ApiProvider {
         });
 
         return this.httpClient.get<any>(this.url + "series", this.httpOptions);
+    }
+
+    public addSeries(series: TvSeries) {
+        console.log('---------------------------------add Series');
+        console.log(this.authService.token);
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "series", {
+            "name": series.name,
+            "image": series.image,
+            "genres": series.description,
+            "noOfSeasons": series.noSeasons,
+            "noOfEpisodes": series.noEpisodes,
+            "director": "Director",
+            "releaseYear": "2020",
+        }, this.httpOptions)
+            .pipe(
+                catchError(this.handleAddError)
+            );
+
+    }
+
+
+    public addNewSeason(season: Season, idSerial: string) {
+        console.log('---------------------------------add Season');
+        console.log(this.authService.token);
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        console.log(this.url + "seasons");
+        return this.httpClient.post<any>(this.url + "seasons", {
+            "name": season.name,
+            "generalDescription": season.description,
+            "number": season.noEpisodes,
+            "serialId": idSerial,
+        }, this.httpOptions)
+            .pipe(
+                catchError(this.handleAddError)
+            );
     }
 
 }
