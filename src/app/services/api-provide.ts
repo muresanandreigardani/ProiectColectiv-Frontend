@@ -133,7 +133,7 @@ export class ApiProvider {
         console.log(this.url + "seasons");
         return this.httpClient.post<any>(this.url + "seasons", {
             "name": season.name,
-            "generalDescription": season.image,
+            "generalDescription": season.description,
             "number": season.noEpisodes,
             "serialId": idSerial,
         }, this.httpOptions)
