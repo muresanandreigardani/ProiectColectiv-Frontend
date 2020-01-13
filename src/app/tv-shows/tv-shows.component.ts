@@ -44,6 +44,7 @@ export class TvShowsComponent implements OnInit {
     return this.images;
   }
 
+
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.type = data.type;

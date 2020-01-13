@@ -1,0 +1,38 @@
+.box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-left img{
+    width: 182px;
+    height: 268px;
+}
+
+.content-left{
+    padding: 10px;
+}
+
+.header{
+    min-height: 58px;
+    display: block;
+    padding-left: 10px;
+}
+
+.header p,.header h1{
+    color: white;
+    font-family: Arial;
+
+}
+
+.header span{
+    color: silver;
+    font-family: Arial;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.rating{
+    display: flex-end;
+}
