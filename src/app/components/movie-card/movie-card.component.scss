@@ -26,7 +26,10 @@
   .title-card {
     margin: .8em 0;
     text-align: center;
+    white-space: nowrap;
+    width: 100%;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .serial-card {

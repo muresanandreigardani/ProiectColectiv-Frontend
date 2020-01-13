@@ -15,8 +15,6 @@ import { Movie } from "../models/movie";
 export class TvShowsComponent implements OnInit {
   public data: any[];
   public images: string[] = [];
-  public breakpoint: number = 4;
-  public ratio: string;
   public type: string;
   constructor(
     private route: ActivatedRoute,

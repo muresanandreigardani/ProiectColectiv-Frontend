@@ -22,7 +22,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Hotel Terminus: The Life and Times of Klaus Barbie",
     duration: 120,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -33,7 +33,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Alive Inside",
     duration: 78,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -44,7 +44,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Bohemian Rapsody",
     duration: 120,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -55,7 +55,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Once Upon a Time ... in Hollywood",
     duration: 161,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -66,7 +66,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Inception",
     duration: 120,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -77,7 +77,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Great Gatsby",
     duration: 143,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -88,7 +88,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Shakespeare in Love",
     duration: 123,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -99,7 +99,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Hobbit: An Unexpected Journey",
     duration: 169,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -110,7 +110,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Fantastic Beasts and Where to Find Them",
     duration: 132,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -121,7 +121,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Harry Potter and the Deathly Hallows: Part 1",
     duration: 146,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -132,7 +132,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
     duration: 143,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -143,7 +143,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Casablanca",
     duration: 102,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -154,7 +154,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Life Is Beautiful",
     duration: 116,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -165,7 +165,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "The Breakfast Club",
     duration: 97,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -176,7 +176,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Green Book",
     duration: 130,
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -190,10 +190,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 1,
     name: "Friends",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 10,
     noSeasons: 10,
+    director: "Marcel Ophüls",
     description:
       "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.",
     image:
@@ -202,10 +203,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 2,
     name: "The Big Bang Theory",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 24,
     noSeasons: 12,
+    director: "Marcel Ophüls",
     description:
       "A woman who moves into an apartment across the hall from two brilliant but socially awkward physicists shows them how little they know about life outside of the laboratory.",
     image:
@@ -214,10 +216,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 3,
     name: "How I Met Your Mother",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 22,
     noSeasons: 9,
+    director: "Marcel Ophüls",
     description:
       "A father recounts to his children, through a series of flashbacks, the journey he and his four best friends took leading up to him meeting their mother.",
     image:
@@ -226,10 +229,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 4,
     name: "Family Guy",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 23,
     noSeasons: 18,
+    director: "Marcel Ophüls",
     description:
       "In a wacky Rhode Island town, a dysfunctional family strive to cope with everyday life as they are thrown from one crazy scenario to another.",
     image:
@@ -238,10 +242,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 5,
     name: "Peaky Blinders",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 6,
     noSeasons: 7,
+    director: "Marcel Ophüls",
     description:
       "A gangster family epic set in 1919 Birmingham, England; centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
     image:
@@ -250,10 +255,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 6,
     name: "Game of Thrones",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 10,
     noSeasons: 8,
+    director: "Marcel Ophüls",
     description:
       "Nine noble families fight for control over the mythical lands of Westeros, while an ancient enemy returns after being dormant for thousands of years.",
     image:
@@ -262,10 +268,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 7,
     name: "Vikings",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 9,
     noSeasons: 6,
+    director: "Marcel Ophüls",
     description:
       "Vikings transports us to the brutal and mysterious world of Ragnar Lothbrok, a Viking warrior and farmer who yearns to explore - and raid - the distant shores across the ocean.",
     image:
@@ -274,9 +281,10 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 8,
     name: "South Park",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 9,
+    director: "Marcel Ophüls",
     noSeasons: 24,
     description:
       "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
@@ -286,10 +294,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 9,
     name: "Sherlock",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 4,
     noSeasons: 4,
+    director: "Marcel Ophüls",
     description:
       "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
     image:
@@ -298,10 +307,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 10,
     name: "Chernobyl",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 5,
     noSeasons: 1,
+    director: "Marcel Ophüls",
     description:
       "In April 1986, an explosion at the Chernobyl nuclear power plant in the Union of Soviet Socialist Republics becomes one of the world's worst man-made catastrophes.",
     image:
@@ -310,10 +320,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 11,
     name: "Money Heist",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 9,
     noSeasons: 4,
+    director: "Marcel Ophüls",
     description:
       "A group of unique robbers assault the Factory of Moneda and Timbre to carry out the most perfect robbery in the history of Spain and take home 2.4 billion euros.",
     image:
@@ -322,10 +333,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 12,
     name: "Riverdale",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 13,
     noSeasons: 4,
+    director: "Marcel Ophüls",
     description:
       "While navigating the troubled waters of romance, school and family, Archie and his gang become entangled in dark Riverdale mysteries.",
     image:
@@ -334,10 +346,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 13,
     name: "The Crown",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 10,
     noSeasons: 4,
+    director: "Marcel Ophüls",
     description:
       "Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the twentieth century.",
     image:
@@ -346,10 +359,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 14,
     name: "House",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 22,
     noSeasons: 8,
+    director: "Marcel Ophüls",
     description:
       "An antisocial maverick doctor who specializes in diagnostic medicine does whatever it takes to solve puzzling cases that come his way using his crack team of doctors and his wits.",
     image:
@@ -358,10 +372,11 @@ export const TV_SERIES: TvSeries[] = [
   {
     id: 15,
     name: "Lie to Me",
-    genres: "romantic",
+    genres: ["romantic"],
     releaseYear: "1988",
     noEpisodes: 13,
     noSeasons: 3,
+    director: "Marcel Ophüls",
     description:
       "About Cal Lightman, the world's leading deception expert who studies facial expressions and involuntary body language to expose the truth behind the lies.",
     image:
