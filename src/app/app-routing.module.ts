@@ -7,6 +7,8 @@ import { CalendarComponent } from "./calendar/calendar.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AdminPageComponent } from "./admin-page/admin-page.component";
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { MovieDetailsPageComponent } from './components/movie-details-page/movie-details-page.component';
+
 const routes: Routes = [
   {
     path: "",
@@ -46,7 +48,12 @@ const routes: Routes = [
     path: "user",
     component: ProfileComponent,
     data: { token: "token" }
+  },
+  {
+    path: "movies/details",
+    component: MovieDetailsPageComponent
   }
+
 ];
 
 @NgModule({

@@ -7,7 +7,7 @@
       <span>{{item.name}}</span>
     </div>
     <div *ngIf="item.noSeasons > 0" class="serial-card">
-      <span>Seasons : {{item.noSeasons}}</span>
+      <span>Seasons : {{item.noSeasons}} </span>
     </div>
     <div *ngIf="item.noEpisodes > 0" class="serial-card">
       <span>Episodes : {{item.noEpisodes}}</span>
@@ -18,8 +18,6 @@
       <h1>{{item.name}}</h1>
       <p>Genres : {{item.genres}}</p>
       <div *ngIf="item.noSeasons > 0" class="serial-details">
-        <p>Seasons : {{item.noSeasons}}</p>
-        <p>Episodes : {{item.noEpisodes}}</p>
       </div>
       <p>Director : {{item.director}}</p>
       <p *ngIf="item.duration">Duration : {{item.duration}} min</p>

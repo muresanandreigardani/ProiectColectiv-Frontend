@@ -42,61 +42,7 @@ export class TvShowsComponent implements OnInit {
 
     return this.images;
   }
-  performSortRequest(event) {
-    if (event.value === "releaseYear")
-      if (this.type === "movies") {
-        this.data = mockData.MOVIE_LIST.sort((movie1, movie2) => {
-          return movie1.releaseYear < movie2.releaseYear ? 1 : 0;
-        });
-      } else if (this.type === "tvshows") {
-        this.data = mockData.TV_SERIES.sort((serial1, serial2) => {
-          return serial1.releaseYear < serial2.releaseYear ? 1 : 0;
-        });
-      }
-    // let serverData = [];
-    // switch (this.type) {
-    //   case "movies":
-    // serverData = [];
-    // this.data = mockData.MOVIE_LIST;
-    // this.apiProvider.getSortedMovies().subscribe(data => {
-    //   console.log(data);
-    //   data.forEach(movie => {
-    //     serverData.push({
-    //       name: movie["name"],
-    //       duration: movie["duration"],
-    //       releaseYear: movie["releaseYear"],
-    //       director: movie["director"],
-    //       genres: movie["genres"],
-    //       description: movie["description"],
-    //       image: movie["image"]
-    //     });
-    //   });
-    // });
-    // this.data = serverData;
-    // break;
-    // case "tvshows":
-    // serverData = [];
-    // this.data = mockData.TV_SERIES;
-    // this.apiProvider.getSortedSerials().subscribe(data => {
-    //   console.log(data);
-    //   data.forEach(series => {
-    //     serverData.push({
-    //       name: series["name"],
-    //       director: series["director"],
-    //       genres: series["genres"],
-    //       releaseYear: series["releaseYear"],
-    //       noEpisodes: series["noOfEpisodes"],
-    //       noSeasons: series["noOfSeasons"],
-    //       image: series["image"]
-    //     });
-    //   });
-    // });
-    // this.data = serverData;
-    //     break;
-    //   default:
-    //     alert("Something went wrong");
-    // }
-  }
+  
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.type = data.type;
