@@ -1,16 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { TV_SERIES } from '../apis/binge-watch.mock';
-import { of, Observable, throwError } from "rxjs";
+import { Observable, throwError } from "rxjs";
 import { AuthService } from './authentication.service';
 import { Token } from '../models/Token';
 import { catchError } from 'rxjs/operators';
-import { AlertService } from './alert.service';
 import { TvSeries, Season } from '../models/tvSeries';
 
 @Injectable()
 export class ApiProvider {
-    public url = "http://192.168.1.6:8080/";
+    public url = "http://192.168.1.7:8080/";
     public httpOptions;
     public serials: TvSeries[] = [];
 
@@ -23,6 +21,82 @@ export class ApiProvider {
                 "Content-Type": "application/json"
             })
         };
+    }
+
+    public getFriends(username: string) {
+        console.log('---------------------------------get Friends');
+        console.log(this.authService.token);
+        console.log(this.url + "friends");
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "friends", null, this.httpOptions)
+            .pipe(
+                catchError(this.handleAddError)
+            );
+    }
+
+    public getNewFriends(username: string) {
+        console.log('---------------------------------get new Friends');
+        console.log(this.authService.token);
+        console.log(this.url + "search");
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "search", null, this.httpOptions)
+            .pipe(
+                catchError(this.handleAddError)
+            );
+    }
+
+    public sendRequest(username: string) {
+        console.log('---------------------------------send Friends');
+        console.log(this.authService.token);
+        console.log(this.url + "friendRequest/" + username);
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "friendRequest/" + username, null, this.httpOptions)
+            .pipe(
+                catchError(this.handleAddError)
+            );
+    }
+
+    public addNewFriend(username: string) {
+        console.log('---------------------------------request Friend');
+        console.log(this.authService.token);
+        console.log(this.url + "friendRequestAccepted/" + username);
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "friendRequestAccepted/" + username, null, this.httpOptions);
+    }
+
+    public removeFriend(username: string) {
+        console.log('---------------------------------remove Friend');
+        console.log(this.authService.token);
+        console.log(this.url + "friendRequestCanceled" + username);
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "friendRequestCanceled/" + username, null, this.httpOptions);
+    }
+
+    public getFriendsRequests() {
+
+        console.log('---------------------------------get Friends requests');
+        console.log(this.authService.token);
+        console.log(this.url + "friendsRequest");
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "friendsRequest", null, this.httpOptions);
     }
 
     public getSerialsName() {
@@ -140,6 +214,16 @@ export class ApiProvider {
             .pipe(
                 catchError(this.handleAddError)
             );
+    }
+
+    public addProfileImage(urlImage: string) {
+        console.log(this.authService.token);
+        console.log('---------------------------------add Image');
+        this.httpOptions.headers = new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + this.authService.token
+        });
+        return this.httpClient.post<any>(this.url + "image", { "image": urlImage }, this.httpOptions);
     }
 
 }

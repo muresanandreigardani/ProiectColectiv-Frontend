@@ -1,0 +1,19 @@
+:host {
+    width: 300px;
+    .hideClass {
+        display: none;
+    }
+    .content {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        border: 1px solid;
+    
+        .username {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
+}

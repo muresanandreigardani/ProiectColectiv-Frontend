@@ -55,17 +55,20 @@ export class LoginComponent {
       .subscribe(data => {
         console.log(data);
         const res = data['token'];
+        const typeUser = data['role'];
         if (res) {
-          response = LoginResponse.Admin;
+          response = typeUser === '1' ? LoginResponse.User : LoginResponse.Admin;
         }
         console.log(response);
         this.authService.token = res;
         if (response === LoginResponse.Admin) {
+          this.authService.activeUser = this.username;
           this.authService.loginStatus = LoginResponse.Admin;
           this.router.navigate(["/admin"]);
         } else {
           if (response === LoginResponse.User) {
             this.authService.loginStatus = LoginResponse.User;
+            this.authService.activeUser = this.username;
             this.router.navigate(["/user"]);
           } else {
             alert("Authentication failed!");

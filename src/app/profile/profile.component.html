@@ -1,23 +1,53 @@
 <div class="profile">
   <div class="container">
+
     <h1>{{user.name}}' profile</h1>
-    <div class="user-details">
-      <h2>Account Details</h2>
-      <h3>Email : {{user.email}}</h3>
-      <h3>User Role : {{user.userRole}}</h3>
-      <button class="friend-btn show-btn" (click)="changeData(user.id)">Show my movies and series</button>
+    <div class="user-details-picture">
+      <span class="user-details">
+        <h2>Account Details</h2>
+        <h3>Email : {{user.email}}</h3>
+        <h3>User Role : {{user.userRole}}</h3>
+      </span>
+
+      <span class="profile-picture">
+        <label class="hoverable" for="fileInput">
+          <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+          <div class="hover-text">Choose file</div>
+          <div class="background"></div>
+        </label>
+        <br />
+        <input id="fileInput" type='file' (change)="onSelectFile($event)">
+        <button mat-button *ngIf="url" (click)="delete()">Remove picture</button>
+      </span>
     </div>
 
     <div>
+      <button class="friend-btn show-btn" (click)="changeData(user.id)">Show my movies and series</button>
+
       <h1>Friends</h1>
       <div class="friends grid-list" [class.show]="showFriends">
         <div *ngFor="let friend of friends" class="friend-card">
-          <h4>{{friend.name}}</h4>
+          <h4>{{friend}}</h4>
           <button class="friend-btn show-btn" (click)="changeData(friend.id)">Show movies and series</button>
         </div>
       </div>
       <button class="show-btn"
         (click)="showFriends = !showFriends">{{ showFriends ? 'Show less': 'Show More' }}</button>
+    </div>
+
+    <div>
+
+      <h1>Request from friends</h1>
+      <div *ngFor="let fr of requestFriends">
+        <app-friends (refresh)="refreshApi()" [username]="fr"></app-friends>
+      </div>
+    </div>
+
+    <div>
+      <h1>Add new friends</h1>
+      <div *ngFor="let fri of makeNewFriends">
+        <app-add-friends (refresh2)="refreshApi()" [username]="fri"></app-add-friends>
+      </div>
     </div>
 
     <div>

@@ -39,6 +39,8 @@ import { ApiProvider } from './services/api-provide';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AlertService } from './services/alert.service';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { FriendsComponent } from './components/friends/friends.component';
+import { AddFriendsComponent } from './components/add-friends/add-friends.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
     TvShowsComponent,
     AdminPageComponent,
     ProfileComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    FriendsComponent,
+    AddFriendsComponent
   ],
   imports: [
     ReactiveFormsModule,
