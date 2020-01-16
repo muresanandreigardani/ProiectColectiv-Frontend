@@ -25,14 +25,14 @@ export class TvShowsComponent implements OnInit {
     private router: Router,
     private alertService: AlertService,
   ) {
-    /*if (this.authService.token === '') {
+    if (this.authService.token === '') {
       // alert('You are not authenticate!');
       this.alertService.openSnackBar('You are not authenticated!', "Cancel");
       this.router.navigate(['']);
     }
-    else {*/
-    this.imagesUrl();
-    //}
+    else {
+      this.imagesUrl();
+    }
   }
 
   public imagesUrl(): string[] {

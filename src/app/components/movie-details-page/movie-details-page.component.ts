@@ -8,14 +8,19 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MovieDetailsPageComponent implements OnInit {
 
-  movie = ""
+  item: any
   constructor(
     private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit() {
-    let movie = this.route.snapshot.paramMap.get('movie');
-    console.log(movie);
+    this.route
+      .queryParams
+      .subscribe(params => {
+        this.item = params['item'];
+      });
+    console.log(this.item);
   }
+
 
 }

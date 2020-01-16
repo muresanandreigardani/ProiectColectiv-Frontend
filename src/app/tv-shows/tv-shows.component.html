@@ -2,7 +2,8 @@
   <div class="container">
     <div class="grid-list">
       <div *ngFor="let serial of data">
-        <app-movie-card [routerLink]="['/movies/details']" [item]="serial"></app-movie-card>
+        <app-movie-card [routerLink]="['/movies/details']" [item]="serial" [queryParams]="{ item: serial.name }">
+        </app-movie-card>
       </div>
     </div>
   </div>
