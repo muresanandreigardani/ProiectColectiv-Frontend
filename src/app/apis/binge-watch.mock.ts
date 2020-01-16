@@ -34,7 +34,7 @@ export const MOVIE_LIST: Movie[] = [
     name: "Alive Inside",
     duration: 78,
     genres: ["romantic"],
-    releaseYear: "1988",
+    releaseYear: "1998",
     director: "Marcel Ophüls",
     description:
       "Dan Cohen, founder of the nonprofit organization Music & Memory, fights against a broken healthcare system to demonstrate music's ability to combat memory loss and restore a deep sense of self to those suffering from it.",

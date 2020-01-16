@@ -1,9 +1,20 @@
 <div class="app">
   <div class="container">
+    <div class="sort-container">
+      <mat-form-field style="color: aliceblue; font-size: 1.2rem;">
+        <mat-label style="color: aliceblue;">Sort by</mat-label>
+        <mat-select [(ngModel)]="sortBy" (selectionChange)="performSortRequest($event)">
+          <mat-option value="releaseYear">Release year</mat-option>
+          <mat-option value="rating">Rating</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
     <div class="grid-list">
       <div *ngFor="let serial of data">
         <app-movie-card [item]="serial"></app-movie-card>
       </div>
     </div>
   </div>
+
 </div>
