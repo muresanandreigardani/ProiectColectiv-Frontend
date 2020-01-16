@@ -17,9 +17,12 @@ export class ProfileComponent implements OnInit {
   public tvSeries: TvSeries[];
   public images: string[] = [];
 
+  public history: any[];
+
   public showMovies: boolean = false;
   public showSeries: boolean = false;
   public showFriends: boolean = false;
+  public showHistory: boolean = false;
   @Input()
   public userToken: string;
 
@@ -48,6 +51,8 @@ export class ProfileComponent implements OnInit {
     this.movies = this.userMovies;
     this.tvSeries = this.userTvSeries;
 
+    this.history = mockData.MOVIE_LIST;
+
     for (let i = 0; i < 30; i++) {
       this.friends.push({
         id: "32",
@@ -56,8 +61,9 @@ export class ProfileComponent implements OnInit {
           {
             name: "Film1",
             duration: 120,
-            releaseDate: new Date(),
-            author: "Autor1",
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             description: "Description1",
             image:
               "https://i1.wp.com/alankrode.com/wp-content/uploads/2018/06/New-York-Confidential-DVD-cover-360w-500h-180x250.jpg?ssl=1"
@@ -65,8 +71,9 @@ export class ProfileComponent implements OnInit {
           {
             name: "Film2",
             duration: 120,
-            releaseDate: new Date(),
-            author: "Autor2",
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             description: "Description2",
             image:
               "http://www.magazinemix.co.uk/wp-content/uploads/2015/10/filmmonthlyjul1990-180x250.jpg"
@@ -74,8 +81,9 @@ export class ProfileComponent implements OnInit {
           {
             name: "Film3",
             duration: 120,
-            releaseDate: new Date(),
-            author: "Autor3",
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             description: "Description3",
             image:
               "https://i1.wp.com/alankrode.com/wp-content/uploads/2018/06/New-York-Confidential-DVD-cover-360w-500h-180x250.jpg?ssl=1"
@@ -83,8 +91,9 @@ export class ProfileComponent implements OnInit {
           {
             name: "Film3",
             duration: 120,
-            releaseDate: new Date(),
-            author: "Autor3",
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             description: "Description3",
             image:
               "http://www.topprimenews.xyz/wp-content/uploads/2019/08/Mantesh-Kumar-180x250.jpg"
@@ -94,7 +103,9 @@ export class ProfileComponent implements OnInit {
           {
             id: 1,
             name: "Serial1",
-            releaseDate: new Date(),
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             noEpisodes: 4,
             noSeasons: 4,
             description: "Description1",
@@ -104,7 +115,9 @@ export class ProfileComponent implements OnInit {
           {
             id: 1,
             name: "Serial1",
-            releaseDate: new Date(),
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             noEpisodes: 4,
             description: "Description1",
             noSeasons: 4,
@@ -114,7 +127,9 @@ export class ProfileComponent implements OnInit {
           {
             id: 1,
             name: "Serial1",
-            releaseDate: new Date(),
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             noEpisodes: 4,
             noSeasons: 4,
             description: "Description1",
@@ -124,7 +139,9 @@ export class ProfileComponent implements OnInit {
           {
             id: 1,
             name: "Serial1",
-            releaseDate: new Date(),
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
             noEpisodes: 4,
             noSeasons: 4,
             description: "Description1",
@@ -139,6 +156,26 @@ export class ProfileComponent implements OnInit {
     // .then(response => response.json())
     // .then(user => {
     //   this.user = user;
+    // })
+    // .catch(err => {
+    //   alert(err.message)
+    // })
+
+    //fetch history
+    // fetch("url")
+    // .then(response => response.json())
+    // .then(historyItems => {
+    //   historyItems.forEach(item =>{
+    //   let newHistoryItem = {
+    //      image : item.image,
+    //      name : item.name,
+    //      releaseYear : item.releaseYear,
+    //      duration : item.duration,
+    //      description : item.description,
+    //      director : item.director,
+    //      genres : item.genres
+    //   })
+    //   if()
     // })
     // .catch(err => {
     //   alert(err.message)
@@ -170,10 +207,11 @@ export class ProfileComponent implements OnInit {
     //     const newMovie = new Movie();
     //     newMovie.image = movie.image;
     //     newMovie.name = movie.name;
-    //     newMovie.releaseDate = movie.releaseDate;
+    //     newMovie.releaseYear = movie.releaseYear;
     //     newMovie.duration = movie.duration;
     //     newMovie.description = movie.description;
-    //     newMovie.author = movie.author;
+    //     newMovie.director = movie.director;
+    //     newMovie.genres = movie.genres
     //     this.userMovies.push(newMovie);
     //   })
     // })
@@ -189,7 +227,9 @@ export class ProfileComponent implements OnInit {
     //     const newSerie = new TvSeries();
     //     newSerie.image = movie.image;
     //     newSerie.name = movie.name;
-    //     newSerie.releaseDate = movie.releaseDate;
+    //     newSerie.genres = movie.genres;
+    //     newSerie.director = movie.director;
+    //     newSerie.releaseYear = movie.releaseYear;
     //     newSerie.noSeasons = movie.noSeasons;
     //     newSerie.description = movie.description;
     //     newSerie.noEpisodes = movie.noEpisodes;

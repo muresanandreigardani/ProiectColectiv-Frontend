@@ -1,7 +1,7 @@
 <div class="card-for-film">
   <div class="minimal-details">
     <div class="img-card">
-      <img class="img-class" src="{{item.image}}">
+      <img class="img-class" alt="item image" src="{{item.image}}">
     </div>
     <div class="title-card">
       <span>{{item.name}}</span>
@@ -16,14 +16,12 @@
   <div class="hover-details">
     <div>
       <h1>{{item.name}}</h1>
-      <p>Description : {{item.description}}</p>
+      <p>Genres : {{item.genres}}</p>
       <div *ngIf="item.noSeasons > 0" class="serial-details">
-        <span>Seasons : {{item.noSeasons}} </span>
-        <span>Episodes : {{item.noEpisodes}}</span>
       </div>
-      <h3>Author : {{item.author}}</h3>
-      <p>Duration : {{item.duration}}</p>
-      <p>Release date : {{item.releaseDate.getFullYear()}}</p>
+      <p>Director : {{item.director}}</p>
+      <p *ngIf="item.duration">Duration : {{item.duration}} min</p>
+      <p>Release year : {{item.releaseYear}}</p>
     </div>
   </div>
 </div>

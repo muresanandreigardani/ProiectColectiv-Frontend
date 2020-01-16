@@ -9,6 +9,30 @@
   width: 70%;
 }
 
+.sort-container {
+  display: block;
+  margin: 2em;
+}
+
+
+::ng-deep.mat-select-value-text {
+  color: #888888 !important;
+}
+
+::ng-deep.mat-select-arrow {
+  color: #888888 !important;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  color: #888888 !important;
+}
+
+::ng-deep .mat-label {
+  width: 2000px;
+  background-color: red;
+  font-size: 10px;
+}
+
 .grid-list {
   margin-top: 2em;
   display: grid;
