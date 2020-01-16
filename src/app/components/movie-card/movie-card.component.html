@@ -18,11 +18,11 @@
       <h1>{{item.name}}</h1>
       <p>Genres : {{item.genres}}</p>
       <div *ngIf="item.noSeasons > 0" class="serial-details">
-        <span>Seasons : {{item.noSeasons}}</span>
-        <span>Episodes : {{item.noEpisodes}}</span>
+        <p>Seasons : {{item.noSeasons}}</p>
+        <p>Episodes : {{item.noEpisodes}}</p>
       </div>
       <p>Director : {{item.director}}</p>
-      <p>Duration : {{item.duration}}</p>
+      <p *ngIf="item.duration">Duration : {{item.duration}} min</p>
       <p>Release year : {{item.releaseYear}}</p>
     </div>
   </div>
