@@ -76,21 +76,6 @@ export class ProfileComponent implements OnInit {
       this.friends = [];
       data.forEach(friend => {
         this.friends.push(friend);
-            genres: ["romantic", "comedy"],
-            releaseDate: new Date(),
-            author: "Autor2",
-            genres: ["romantic", "comedy"],
-            genres: ["romantic", "comedy"],
-            genres: ["romantic", "comedy"],
-            director: "Autor1",
-            genres: ["romantic", "comedy"],
-            director: "Autor1",
-            genres: ["romantic", "comedy"],
-            director: "Autor1",
-            genres: ["romantic", "comedy"],
-            releaseYear: "1995",
-            director: "Autor1",
-            genres: ["romantic", "comedy"],
       });
     });
 

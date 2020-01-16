@@ -56,7 +56,7 @@ import { AddFriendsComponent } from './components/add-friends/add-friends.compon
     ProfileComponent,
     UserRegistrationComponent,
     FriendsComponent,
-    MovieDetailsPageComponent
+    MovieDetailsPageComponent,
     AddFriendsComponent
   ],
   imports: [

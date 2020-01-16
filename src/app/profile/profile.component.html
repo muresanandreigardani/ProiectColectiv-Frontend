@@ -8,22 +8,19 @@
         <h3>Email : {{user.email}}</h3>
         <h3>User Role : {{user.userRole}}</h3>
       </span>
-
-      <span class="profile-picture">
-        <label class="hoverable" for="fileInput">
-          <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
-      <button class="friend-btn show-btn"
-        (click)="showHistory = !showHistory">{{ showHistory ? 'Show my movies and series history' :'Hide history'}}</button>
     </div>
+
+    <label class="hoverable" for="fileInput">
+      <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+      <div class="hover-text">Choose file</div>
+      <div class="background"></div>
+    </label>
+    <br />
+    <input id="fileInput" type='file' (change)="onSelectFile($event)">
+    <button *ngIf="url" (click)="delete()">delete</button>
+
     <div class="history" [class.display]="showHistory">
       <app-carousel title="History" [movieList]="history"></app-carousel>
-          <div class="hover-text">Choose file</div>
-          <div class="background"></div>
-        </label>
-        <br />
-        <input id="fileInput" type='file' (change)="onSelectFile($event)">
-        <button mat-button *ngIf="url" (click)="delete()">Remove picture</button>
-      </span>
     </div>
     <div>
       <button class="friend-btn show-btn" (click)="changeData(user.id)">Show my movies and series</button>
@@ -54,13 +51,13 @@
       </div>
     </div>
 
-    <div>
-        <div *ngFor="let movie of movies">
-          <app-movie-card [item]="movie"></app-movie-card>
-        </div>
+    <div class="movies grid-list">
+      <div *ngFor="let movie of movies">
+        <app-movie-card [item]="movie"></app-movie-card>
       </div>
-      <button class="show-btn" (click)="showMovies = !showMovies">{{ showMovies ? 'Show less': 'Show More' }}</button>
     </div>
+    <button class="show-btn" (click)="showMovies = !showMovies">{{ showMovies ? 'Show less': 'Show More' }}</button>
+
     <div>
       <h1>Suggested Series</h1>
       <div class="series grid-list" [class.showMore]="showSeries">
@@ -71,4 +68,3 @@
       <button class="show-btn" (click)="showSeries = !showSeries">{{ showSeries ? 'Show less': 'Show More' }}</button>
     </div>
   </div>
-</div>
