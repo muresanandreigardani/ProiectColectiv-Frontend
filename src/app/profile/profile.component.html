@@ -1,21 +1,34 @@
 <div class="profile">
   <div class="container">
+
     <h1>{{user.name}}' profile</h1>
-    <div class="user-details">
-      <h2>Account Details</h2>
-      <h3>Email : {{user.email}}</h3>
-      <h3>User Role : {{user.userRole}}</h3>
-      <button class="friend-btn show-btn"
-        (click)="showHistory = !showHistory">{{ showHistory ? 'Show my movies and series history' :'Hide history'}}</button>
+    <div class="user-details-picture">
+      <span class="user-details">
+        <h2>Account Details</h2>
+        <h3>Email : {{user.email}}</h3>
+        <h3>User Role : {{user.userRole}}</h3>
+      </span>
     </div>
+
+    <label class="hoverable" for="fileInput">
+      <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+      <div class="hover-text">Choose file</div>
+      <div class="background"></div>
+    </label>
+    <br />
+    <input id="fileInput" type='file' (change)="onSelectFile($event)">
+    <button *ngIf="url" (click)="delete()">delete</button>
+
     <div class="history" [class.display]="showHistory">
       <app-carousel title="History" [movieList]="history"></app-carousel>
     </div>
     <div>
+      <button class="friend-btn show-btn" (click)="changeData(user.id)">Show my movies and series</button>
+
       <h1>Friends</h1>
       <div class="friends grid-list" [class.showMore]="showFriends">
         <div *ngFor="let friend of friends" class="friend-card">
-          <h4>{{friend.name}}</h4>
+          <h4>{{friend}}</h4>
           <button class="friend-btn show-btn" (click)="changeData(friend.id)">Show movies and series</button>
         </div>
       </div>
@@ -24,14 +37,27 @@
     </div>
 
     <div>
-      <h1>Suggested Movies</h1>
-      <div class="movies grid-list" [class.showMore]="showMovies">
-        <div *ngFor="let movie of movies">
-          <app-movie-card [item]="movie"></app-movie-card>
-        </div>
+
+      <h1>Request from friends</h1>
+      <div *ngFor="let fr of requestFriends">
+        <app-friends (refresh)="refreshApi()" [username]="fr"></app-friends>
       </div>
-      <button class="show-btn" (click)="showMovies = !showMovies">{{ showMovies ? 'Show less': 'Show More' }}</button>
     </div>
+
+    <div>
+      <h1>Add new friends</h1>
+      <div *ngFor="let fri of makeNewFriends">
+        <app-add-friends (refresh2)="refreshApi()" [username]="fri"></app-add-friends>
+      </div>
+    </div>
+
+    <div class="movies grid-list">
+      <div *ngFor="let movie of movies">
+        <app-movie-card [item]="movie"></app-movie-card>
+      </div>
+    </div>
+    <button class="show-btn" (click)="showMovies = !showMovies">{{ showMovies ? 'Show less': 'Show More' }}</button>
+
     <div>
       <h1>Suggested Series</h1>
       <div class="series grid-list" [class.showMore]="showSeries">
@@ -42,4 +68,3 @@
       <button class="show-btn" (click)="showSeries = !showSeries">{{ showSeries ? 'Show less': 'Show More' }}</button>
     </div>
   </div>
-</div>

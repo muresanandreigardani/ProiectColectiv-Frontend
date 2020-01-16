@@ -39,7 +39,9 @@ import { ApiProvider } from './services/api-provide';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AlertService } from './services/alert.service';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { FriendsComponent } from './components/friends/friends.component';
 import { MovieDetailsPageComponent } from './components/movie-details-page/movie-details-page.component';
+import { AddFriendsComponent } from './components/add-friends/add-friends.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { MovieDetailsPageComponent } from './components/movie-details-page/movie
     AdminPageComponent,
     ProfileComponent,
     UserRegistrationComponent,
-    MovieDetailsPageComponent
+    FriendsComponent,
+    MovieDetailsPageComponent,
+    AddFriendsComponent
   ],
   imports: [
     ReactiveFormsModule,

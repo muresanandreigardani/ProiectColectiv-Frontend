@@ -7,4 +7,6 @@ import { LoginResponse } from '../models/project.enum';
 export class AuthService {
     loginStatus: LoginResponse = LoginResponse.Fail;
     token: string = "";
+    urlImage = '';
+    activeUser = '';
 }
