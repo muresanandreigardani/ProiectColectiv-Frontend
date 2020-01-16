@@ -12,7 +12,8 @@
 
     <div class="grid-list">
       <div *ngFor="let serial of data">
-        <app-movie-card [routerLink]="['/movies/details']" [item]="serial" [queryParams]="{ item: serial.name }">
+        <app-movie-card [routerLink]="['/movies/details']" [item]="serial"
+          [queryParams]="{ typeItem: this.type,item: serial.name }">
         </app-movie-card>
       </div>
     </div>
