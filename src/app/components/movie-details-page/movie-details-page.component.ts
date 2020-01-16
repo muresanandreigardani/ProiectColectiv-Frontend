@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MovieDetailsPageComponent implements OnInit {
 
+  movie = ""
   constructor(
     private route: ActivatedRoute,
     private router: Router) { }

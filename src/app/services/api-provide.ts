@@ -9,7 +9,7 @@ import { AlertService } from './alert.service';
 
 @Injectable()
 export class ApiProvider {
-    public url = "http://192.168.100.26:8080/";
+    public url = "http://localhost:8080/";
     public httpOptions;
 
     constructor(
