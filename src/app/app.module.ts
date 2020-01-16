@@ -40,6 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AlertService } from './services/alert.service';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { FriendsComponent } from './components/friends/friends.component';
+import { MovieDetailsPageComponent } from './components/movie-details-page/movie-details-page.component';
 import { AddFriendsComponent } from './components/add-friends/add-friends.component';
 
 @NgModule({
@@ -55,6 +56,7 @@ import { AddFriendsComponent } from './components/add-friends/add-friends.compon
     ProfileComponent,
     UserRegistrationComponent,
     FriendsComponent,
+    MovieDetailsPageComponent
     AddFriendsComponent
   ],
   imports: [

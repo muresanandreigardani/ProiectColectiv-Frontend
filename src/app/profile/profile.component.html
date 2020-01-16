@@ -12,6 +12,11 @@
       <span class="profile-picture">
         <label class="hoverable" for="fileInput">
           <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+      <button class="friend-btn show-btn"
+        (click)="showHistory = !showHistory">{{ showHistory ? 'Show my movies and series history' :'Hide history'}}</button>
+    </div>
+    <div class="history" [class.display]="showHistory">
+      <app-carousel title="History" [movieList]="history"></app-carousel>
           <div class="hover-text">Choose file</div>
           <div class="background"></div>
         </label>
@@ -20,12 +25,11 @@
         <button mat-button *ngIf="url" (click)="delete()">Remove picture</button>
       </span>
     </div>
-
     <div>
       <button class="friend-btn show-btn" (click)="changeData(user.id)">Show my movies and series</button>
 
       <h1>Friends</h1>
-      <div class="friends grid-list" [class.show]="showFriends">
+      <div class="friends grid-list" [class.showMore]="showFriends">
         <div *ngFor="let friend of friends" class="friend-card">
           <h4>{{friend}}</h4>
           <button class="friend-btn show-btn" (click)="changeData(friend.id)">Show movies and series</button>
@@ -51,8 +55,6 @@
     </div>
 
     <div>
-      <h1>Movies</h1>
-      <div class="movies grid-list" [class.show]="showMovies">
         <div *ngFor="let movie of movies">
           <app-movie-card [item]="movie"></app-movie-card>
         </div>
@@ -60,8 +62,8 @@
       <button class="show-btn" (click)="showMovies = !showMovies">{{ showMovies ? 'Show less': 'Show More' }}</button>
     </div>
     <div>
-      <h1>Series</h1>
-      <div class="series grid-list" [class.show]="showSeries">
+      <h1>Suggested Series</h1>
+      <div class="series grid-list" [class.showMore]="showSeries">
         <div *ngFor="let serie of tvSeries">
           <app-movie-card [item]="serie"></app-movie-card>
         </div>

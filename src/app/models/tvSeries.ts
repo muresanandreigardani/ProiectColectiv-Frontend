@@ -21,17 +21,19 @@ export interface TvSeriesInterface {
   description: string;
   noEpisodes: number;
   noSeasons: number;
+  director: string;
   image: string;
-  genres: string;
+  genres: string[];
 }
 
 export class TvSeries implements TvSeriesInterface {
   id: number;
   name: string;
-  genres: string;
+  genres: string[];
   releaseYear: string;
   description: string;
   noEpisodes: number;
+  director: string;
   noSeasons: number;
   image: string;
 }

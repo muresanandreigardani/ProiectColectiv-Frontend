@@ -5,7 +5,7 @@ export interface MovieInterface {
   director: string;
   description: string;
   image: string;
-  genres: string;
+  genres: string[];
 }
 
 export class Movie implements MovieInterface {
@@ -13,7 +13,7 @@ export class Movie implements MovieInterface {
   duration: number;
   releaseYear: string;
   director: string;
-  genres: string;
+  genres: string[];
   description: string;
   image: string;
 }

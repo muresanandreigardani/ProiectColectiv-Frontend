@@ -23,10 +23,12 @@ export class ProfileComponent implements OnInit {
   public tvSeries: TvSeries[];
   public images: string[] = [];
 
+  public history: any[];
+
   public showMovies: boolean = false;
   public showSeries: boolean = false;
   public showFriends: boolean = false;
-  public name = 'Angular 4';
+  public showHistory: boolean = false;
   public url = '';
   @Input()
   public userToken: string;
@@ -67,11 +69,28 @@ export class ProfileComponent implements OnInit {
     this.movies = this.userMovies;
     this.tvSeries = this.userTvSeries;
 
+    this.history = mockData.MOVIE_LIST;
+
     this.apiProvide.getFriends(this.authService.activeUser).subscribe((data: any) => {
       console.log(data);
       this.friends = [];
       data.forEach(friend => {
         this.friends.push(friend);
+            genres: ["romantic", "comedy"],
+            releaseDate: new Date(),
+            author: "Autor2",
+            genres: ["romantic", "comedy"],
+            genres: ["romantic", "comedy"],
+            genres: ["romantic", "comedy"],
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
+            releaseYear: "1995",
+            director: "Autor1",
+            genres: ["romantic", "comedy"],
       });
     });
 
@@ -190,6 +209,26 @@ export class ProfileComponent implements OnInit {
     //   alert(err.message)
     // })
 
+    //fetch history
+    // fetch("url")
+    // .then(response => response.json())
+    // .then(historyItems => {
+    //   historyItems.forEach(item =>{
+    //   let newHistoryItem = {
+    //      image : item.image,
+    //      name : item.name,
+    //      releaseYear : item.releaseYear,
+    //      duration : item.duration,
+    //      description : item.description,
+    //      director : item.director,
+    //      genres : item.genres
+    //   })
+    //   if()
+    // })
+    // .catch(err => {
+    //   alert(err.message)
+    // })
+
     //fetch friends
     // fetch("url")
     // .then(response => response.json())
@@ -216,10 +255,11 @@ export class ProfileComponent implements OnInit {
     //     const newMovie = new Movie();
     //     newMovie.image = movie.image;
     //     newMovie.name = movie.name;
-    //     newMovie.releaseDate = movie.releaseDate;
+    //     newMovie.releaseYear = movie.releaseYear;
     //     newMovie.duration = movie.duration;
     //     newMovie.description = movie.description;
-    //     newMovie.author = movie.author;
+    //     newMovie.director = movie.director;
+    //     newMovie.genres = movie.genres
     //     this.userMovies.push(newMovie);
     //   })
     // })
@@ -235,7 +275,9 @@ export class ProfileComponent implements OnInit {
     //     const newSerie = new TvSeries();
     //     newSerie.image = movie.image;
     //     newSerie.name = movie.name;
-    //     newSerie.releaseDate = movie.releaseDate;
+    //     newSerie.genres = movie.genres;
+    //     newSerie.director = movie.director;
+    //     newSerie.releaseYear = movie.releaseYear;
     //     newSerie.noSeasons = movie.noSeasons;
     //     newSerie.description = movie.description;
     //     newSerie.noEpisodes = movie.noEpisodes;
