@@ -328,7 +328,6 @@ export class ProfileComponent implements OnInit {
         this.makeNewFriends.push(fr);
       })
     });
-    console.log('22222222222222222222222222222222222222222222222222222222222222');
   }
 
   public imagesUrl(): string[] {
@@ -346,8 +345,9 @@ export class ProfileComponent implements OnInit {
 
       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-      reader.onload = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
+      reader.onload = (event: ProgressEvent) => { // called once readAsDataURL is completed
+        console.log(event);
+        this.url = reader.result;
         this.authService.urlImage = this.url;
         this.apiProvide.addProfileImage("this.url imaginea mea22").subscribe(data => console.log(data));
       }
