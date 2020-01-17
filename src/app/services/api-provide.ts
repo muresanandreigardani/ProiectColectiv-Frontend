@@ -292,6 +292,45 @@ export class ApiProvider {
       this.httpOptions
     );
   }
+  public getLaterMovies() {
+    console.log("---------------------------------get Later Movies");
+    console.log(this.authService.token);
+    this.httpOptions.headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + this.authService.token
+    });
+
+    return this.httpClient.get<any>(
+      this.url + "movies/watch-later",
+      this.httpOptions
+    );
+  }
+  public getHistorySeries() {
+    console.log("---------------------------------get History Series");
+    console.log(this.authService.token);
+    this.httpOptions.headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + this.authService.token
+    });
+
+    return this.httpClient.get<any>(
+      this.url + "series/history",
+      this.httpOptions
+    );
+  }
+  public getLaterSeries() {
+    console.log("---------------------------------get Later Series");
+    console.log(this.authService.token);
+    this.httpOptions.headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + this.authService.token
+    });
+
+    return this.httpClient.get<any>(
+      this.url + "series/watch-later",
+      this.httpOptions
+    );
+  }
 
   public getDetailsSerie(name: string) {
     console.log("---------------------------------get Details Serie");
@@ -324,7 +363,7 @@ export class ApiProvider {
     } else
       return this.httpClient.post<any>(
         this.url + `series/${id}/history`,
-        null,
+        { "episodeId": "1" },
         this.httpOptions
       );
   }
@@ -340,11 +379,13 @@ export class ApiProvider {
     if (type === "movies") {
       return this.httpClient.post<any>(
         this.url + `movies/${id}/watch-later`,
+        null,
         this.httpOptions
       );
     } else {
       return this.httpClient.post<any>(
         this.url + `series/${id}/watch-later`,
+        null,
         this.httpOptions
       );
     }

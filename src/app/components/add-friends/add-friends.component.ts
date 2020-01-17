@@ -8,6 +8,7 @@ import { ApiProvider } from 'src/app/services/api-provide';
 })
 export class AddFriendsComponent {
   public sent: boolean = false;
+  public label = "Send request";
   @Input()
   public username: string;
   @Output()
@@ -19,6 +20,7 @@ export class AddFriendsComponent {
 
   public addNewFriend() {
     this.apiProvider.sendRequest(this.username).subscribe(data => {
+      this.label = "Request sent";
       this.sent = !this.sent;
       console.log(data);
       setTimeout(() => {

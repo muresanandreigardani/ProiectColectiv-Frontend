@@ -157,6 +157,11 @@ img {
   border-radius: 20px;
 }
 
+.user-user-details {
+  display: flex;
+  justify-content: space-between;
+}
+
 ::ng-deep .content{
   padding: 15px 0 15px 0 !important;
 }
