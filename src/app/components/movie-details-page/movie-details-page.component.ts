@@ -20,6 +20,10 @@ export class MovieDetailsPageComponent implements OnInit {
     private router: Router
   ) {}
 
+  updateRating(rating: number) {
+    this.apiProvider.giveRating(this.item.id, rating).subscribe(data => { console.log(data); this.ngOnInit() });
+  }
+
   addInHistory() {
     this.apiProvider
       .addInHistory(this.item.id, this.type)

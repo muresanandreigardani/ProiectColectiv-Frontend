@@ -21,8 +21,10 @@
     "@angular/platform-browser": "^8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.5",
     "jquery": "^3.4.1",
     "ng-simple-slideshow": "^1.2.9",
+    "ngx-bar-rating": "^1.1.0",
     "ngx-slick-carousel": "^0.4.6",
     "rxjs": "~6.4.0",
     "slick-carousel": "^1.8.1",
@@ -30,7 +32,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.19",
+    "@angular-devkit/build-angular": "^0.803.23",
     "@angular/cli": "~8.3.17",
     "@angular/compiler-cli": "~8.2.13",
     "@angular/language-service": "~8.2.13",

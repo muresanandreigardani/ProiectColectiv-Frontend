@@ -25,7 +25,7 @@ $ProiectColectiv-Frontend-theme: mat-light-theme($ProiectColectiv-Frontend-prima
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($ProiectColectiv-Frontend-theme);
-
+@import '~ngx-bar-rating/themes/br-default-theme';
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }

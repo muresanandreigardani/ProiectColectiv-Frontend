@@ -390,4 +390,18 @@ export class ApiProvider {
       );
     }
   }
+
+  public giveRating(id: string, rating: number): any {
+
+    this.httpOptions.headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + this.authService.token
+    });
+
+    return this.httpClient.post<any>(
+      this.url + `movies/${id}/rate`,
+      { rating: rating },
+      this.httpOptions
+    );
+  }
 }
