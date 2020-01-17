@@ -382,7 +382,7 @@ export class ApiProvider {
         null,
         this.httpOptions
       );
-    } else
+    } else {
       return this.httpClient.post<any>(
         this.url + `series/${id}/watch-later`,
         null,

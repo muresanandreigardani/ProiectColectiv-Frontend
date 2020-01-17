@@ -9,11 +9,50 @@
   width: 70%;
 }
 
-.sort-container {
-  display: block;
-  margin: 2em;
+.metadata-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4em;
 }
 
+#find-by-filter {
+  padding-bottom: 10px;
+  ;
+  border-bottom: 1px solid #ffffff;
+}
+
+.clear-filters-button {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.clear-filters-button label {
+  color: #ffffff;
+  font-size: .95rem;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.clear-filters-button label:hover {
+  color: #888888;
+}
+
+::placeholder {
+  color: #ffffff;
+  opacity: 1;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  color: #ffffff;
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  font-style: italic;
+  color: #ffffff;
+}
 
 ::ng-deep.mat-select-value-text {
   color: #888888 !important;

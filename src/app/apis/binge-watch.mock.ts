@@ -22,7 +22,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Hotel Terminus: The Life and Times of Klaus Barbie",
     duration: 120,
-    genres: ["romantic"],
+    genres: ["romantic", "action"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
