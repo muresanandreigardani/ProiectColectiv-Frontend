@@ -18,16 +18,19 @@ export class MovieDetailsPageComponent implements OnInit {
     private route: ActivatedRoute,
     private apiProvider: ApiProvider,
     private router: Router
-  ) { }
+  ) {}
 
   addInHistory() {
-    console.log(this.item);
-    this.apiProvider.addInHistory(this.item.id, this.type).subscribe(data => console.log(data));
+    this.apiProvider
+      .addInHistory(this.item.id, this.type)
+      .subscribe(data => console.log(data));
     this.isAddedInHistory = !this.isAddedInHistory;
   }
 
   addInWatchLater() {
-    this.apiProvider.addInWatchLater(this.item.id, this.type).subscribe(data => console.log(data));
+    this.apiProvider
+      .addInWatchLater(this.item.id, this.type)
+      .subscribe(data => console.log(data));
     this.isAddedInWatchLater = !this.isAddedInWatchLater;
   }
 

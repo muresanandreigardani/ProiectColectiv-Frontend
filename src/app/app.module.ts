@@ -34,14 +34,14 @@ import { TvShowsComponent } from "./tv-shows/tv-shows.component";
 import { UserService } from "./services/user.service";
 import { AdminPageComponent } from "./admin-page/admin-page.component";
 import { AuthService } from "./services/authentication.service";
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ApiProvider } from './services/api-provide';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AlertService } from './services/alert.service';
-import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
-import { FriendsComponent } from './components/friends/friends.component';
-import { MovieDetailsPageComponent } from './components/movie-details-page/movie-details-page.component';
-import { AddFriendsComponent } from './components/add-friends/add-friends.component';
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { ApiProvider } from "./services/api-provide";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { AlertService } from "./services/alert.service";
+import { UserRegistrationComponent } from "./components/user-registration/user-registration.component";
+import { FriendsComponent } from "./components/friends/friends.component";
+import { MovieDetailsPageComponent } from "./components/movie-details-page/movie-details-page.component";
+import { AddFriendsComponent } from "./components/add-friends/add-friends.component";
 
 @NgModule({
   declarations: [
@@ -86,13 +86,7 @@ import { AddFriendsComponent } from './components/add-friends/add-friends.compon
     MatNativeDateModule,
     MatSnackBarModule
   ],
-  providers: [
-    UserService,
-    AuthService,
-    ApiProvider,
-    AlertService,
-
-  ],
+  providers: [UserService, AuthService, ApiProvider, AlertService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
