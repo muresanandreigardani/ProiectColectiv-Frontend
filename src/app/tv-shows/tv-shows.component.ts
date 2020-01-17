@@ -63,7 +63,8 @@ export class TvShowsComponent implements OnInit {
               director: movie["director"],
               genres: movie["genres"],
               description: movie["description"],
-              image: movie["image"]
+              image: movie["image"],
+              rating: movie["rating"]
             });
           });
         });
@@ -82,7 +83,8 @@ export class TvShowsComponent implements OnInit {
               releaseYear: series["releaseYear"],
               noEpisodes: series["noOfEpisodes"],
               noSeasons: series["noOfSeasons"],
-              image: series["image"]
+              image: series["image"],
+              rating: series["rating"]
             });
           });
         });
