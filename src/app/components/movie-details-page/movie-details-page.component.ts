@@ -21,7 +21,7 @@ export class MovieDetailsPageComponent implements OnInit {
   ) { }
 
   updateRating(rating: number) {
-    this.apiProvider.giveRating(this.item.id, rating).subscribe(data => console.log(data));
+    this.apiProvider.giveRating(this.item.id, rating).subscribe(data => { console.log(data); this.ngOnInit() });
   }
 
   addInHistory() {
