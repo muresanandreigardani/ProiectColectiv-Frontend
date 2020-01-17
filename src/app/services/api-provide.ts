@@ -388,6 +388,6 @@ export class ApiProvider {
         null,
         this.httpOptions
       );
-
+    }
   }
 }
