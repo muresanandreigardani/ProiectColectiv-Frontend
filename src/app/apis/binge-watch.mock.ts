@@ -22,7 +22,7 @@ export const MOVIE_LIST: Movie[] = [
   {
     name: "Hotel Terminus: The Life and Times of Klaus Barbie",
     duration: 120,
-    genres: ["romantic"],
+    genres: ["romantic", "action"],
     releaseYear: "1988",
     director: "Marcel Ophüls",
     description:
@@ -45,7 +45,7 @@ export const MOVIE_LIST: Movie[] = [
     name: "Bohemian Rapsody",
     duration: 120,
     genres: ["romantic"],
-    releaseYear: "1988",
+    releaseYear: "1989",
     director: "Marcel Ophüls",
     description:
       "The story of the legendary British rock band Queen and lead singer Freddie Mercury, leading up to their famous performance at Live Aid (1985).",
@@ -56,7 +56,7 @@ export const MOVIE_LIST: Movie[] = [
     name: "Once Upon a Time ... in Hollywood",
     duration: 161,
     genres: ["romantic"],
-    releaseYear: "1988",
+    releaseYear: "1980",
     director: "Marcel Ophüls",
     description:
       "A faded television actor and his stunt double strive to achieve fame and success in the film industry during the final years of Hollywood's Golden Age in 1969 Los Angeles.",
@@ -269,7 +269,7 @@ export const TV_SERIES: TvSeries[] = [
     id: 7,
     name: "Vikings",
     genres: ["romantic"],
-    releaseYear: "1988",
+    releaseYear: "1908",
     noEpisodes: 9,
     noSeasons: 6,
     director: "Marcel Ophüls",
@@ -282,7 +282,7 @@ export const TV_SERIES: TvSeries[] = [
     id: 8,
     name: "South Park",
     genres: ["romantic"],
-    releaseYear: "1988",
+    releaseYear: "1998",
     noEpisodes: 9,
     director: "Marcel Ophüls",
     noSeasons: 24,

@@ -2,26 +2,44 @@
   <div class="container">
 
     <h1>{{name}}'s profile</h1>
-    <div class="user-details-picture">
-      <span class="user-details">
-        <h2>Account Details</h2>
-        <h3>Email : {{user.email}}</h3>
-        <h3>Role : {{user.userRole}}</h3>
-      </span>
+
+    <div class="user-user-details">
+      <div class="user-details-picture">
+        <span class="user-details">
+          <h2>Account Details</h2>
+          <h3>Email : {{user.email}}</h3>
+          <h3>Role : {{user.userRole}}</h3>
+          <h3>Time spent watching : {{timeSpentWatching}} minutes</h3>
+        </span>
+      </div>
+
+      <div>
+        <label class="hoverable" for="fileInput">
+          <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+          <div class="hover-text">Choose file</div>
+          <div class="background"></div>
+        </label>
+        <br />
+        <input id="fileInput" type='file' (change)="onSelectFile($event)">
+        <button *ngIf="url" (click)="delete()" mat-raised-button color="primary">Remove</button>
+      </div>
     </div>
 
-    <label class="hoverable" for="fileInput">
-      <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
-      <div class="hover-text">Choose file</div>
-      <div class="background"></div>
-    </label>
-    <br />
-    <input id="fileInput" type='file' (change)="onSelectFile($event)">
-    <button *ngIf="url" (click)="delete()">delete</button>
-
-    <div class="history">
-      <app-carousel title="History" [movieList]="history"></app-carousel>
+    <div *ngIf="history?.length > 0" class="history">
+      <app-carousel title="History Movies" [movieList]="history"></app-carousel>
     </div>
+    <div *ngIf="later?.length > 0" class="history">
+      <app-carousel title="Watch-Later Movies" [movieList]="later"></app-carousel>
+    </div>
+    <div *ngIf="historySeries?.length > 0" class="history">
+      <app-carousel title="History Series" [movieList]="historySeries"></app-carousel>
+    </div>
+    <div *ngIf="laterSeries?.length > 0" class="history">
+      <app-carousel title="Watch-Later Series" [movieList]="laterSeries"></app-carousel>
+    </div>
+
+
+
     <div>
       <button class="friend-btn show-btn" (click)="changeData(user.id)">Show my movies and series</button>
 
@@ -51,6 +69,7 @@
       </div>
     </div>
 
+    <h1>Suggested Movies</h1>
     <div class="movies grid-list">
       <div *ngFor="let movie of movies">
         <app-movie-card [item]="movie"></app-movie-card>

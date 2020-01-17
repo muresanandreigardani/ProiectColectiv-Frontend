@@ -1,18 +1,32 @@
 <div class="app">
   <div class="container">
-    <div class="sort-container">
-      <mat-form-field style="color: aliceblue; font-size: 1.2rem;">
+    <div class="metadata-container">
+      <mat-form-field>
         <mat-label style="color: aliceblue;">Sort by</mat-label>
         <mat-select [(ngModel)]="sortBy" (selectionChange)="performSortRequest($event)">
           <mat-option value="releaseYear">Release year</mat-option>
           <mat-option value="rating">Rating</mat-option>
         </mat-select>
       </mat-form-field>
+      <div>
+        <input matInput id="find-by-filter" style="color: aliceblue;" placeholder="Find by title" [(ngModel)]="title"
+          name="title" (keyup)="filterData()">
+      </div>
+      <mat-form-field>
+        <mat-label style="color: aliceblue;">Filter by genre</mat-label>
+        <mat-select [(ngModel)]="filterGenre" (selectionChange)="filterData()">
+          <mat-option *ngFor="let item of getGenres()" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="clear-filters-button">
+        <label (click)="clearFilters()">Clear filters</label>
+      </div>
+
     </div>
 
     <div class="grid-list">
-      <div *ngFor="let serial of data">
-        <app-movie-card [routerLink]="['/movies/details']" [item]="serial"
+      <div *ngFor="let serial of filteredData">
+        <app-movie-card [routerLink]="['/details']" [item]="serial"
           [queryParams]="{ typeItem: this.type,item: serial.name }">
         </app-movie-card>
       </div>

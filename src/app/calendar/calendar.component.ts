@@ -31,6 +31,21 @@ export class CalendarComponent implements OnInit {
       this.type = data.type;
     });
     this.data = mockData.MOVIE_LIST;
+    console.log(this.data.length);
+    this.data = this.data.concat(mockData.TV_SERIES);
+    console.log(this.data.length);
+
+    this.data = this.data.sort((n1, n2) => {
+      if (n1.releaseYear < n2.releaseYear) {
+        return 1;
+      }
+
+      if (n1.releaseYear > n2.releaseYear) {
+        return -1;
+      }
+
+      return 0;
+    });
   }
 
 

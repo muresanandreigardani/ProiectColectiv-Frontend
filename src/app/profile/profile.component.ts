@@ -23,14 +23,18 @@ export class ProfileComponent implements OnInit {
   public movies: Movie[];
   public tvSeries: TvSeries[];
   public images: string[] = [];
+  public timeSpentWatching = 0;
 
   public history: any[];
+  public later: any[];
+  public historySeries: any[];
+  public laterSeries: any[];
 
   public showMovies: boolean = false;
   public showSeries: boolean = false;
   public showFriends: boolean = false;
   public showHistory: boolean = false;
-  public url = '';
+  public url: any = '';
   @Input()
   public userToken: string;
   areRequestFriends: boolean;
@@ -76,7 +80,23 @@ export class ProfileComponent implements OnInit {
     this.apiProvide.getHistoryMovies().subscribe((movies: any) => {
       console.log(movies);
       this.history = movies;
-    })
+      this.timeSpentWatching = 0;
+      movies.forEach(movie => {
+        this.timeSpentWatching += movie.duration;
+      });
+    });
+    this.apiProvide.getLaterMovies().subscribe((movies: any) => {
+      console.log(movies);
+      this.later = movies;
+    });
+    this.apiProvide.getHistorySeries().subscribe((series: any) => {
+      console.log(series);
+      this.historySeries = series;
+    });
+    this.apiProvide.getLaterSeries().subscribe((series: any) => {
+      console.log(series);
+      this.laterSeries = series;
+    });
 
     this.apiProvide.getFriends(this.authService.activeUser).subscribe((data: any) => {
       console.log(data);
@@ -308,7 +328,6 @@ export class ProfileComponent implements OnInit {
         this.makeNewFriends.push(fr);
       })
     });
-    console.log('22222222222222222222222222222222222222222222222222222222222222');
   }
 
   public imagesUrl(): string[] {
@@ -326,10 +345,11 @@ export class ProfileComponent implements OnInit {
 
       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-      reader.onload = (event) => { // called once readAsDataURL is completed
-        // this.url = event.target.result.toString();
-        // this.authService.urlImage = this.url;
-        // this.apiProvide.addProfileImage("this.url imaginea mea22").subscribe(data => console.log(data));
+      reader.onload = (event: ProgressEvent) => { // called once readAsDataURL is completed
+        console.log(event);
+        this.url = reader.result;
+        this.authService.urlImage = this.url;
+        this.apiProvide.addProfileImage("this.url imaginea mea22").subscribe(data => console.log(data));
       }
     }
   }

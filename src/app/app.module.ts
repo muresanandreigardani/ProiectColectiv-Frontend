@@ -44,6 +44,7 @@ import { MovieDetailsPageComponent } from './components/movie-details-page/movie
 import { AddFriendsComponent } from './components/add-friends/add-friends.component';
 import { BarRatingModule } from 'ngx-bar-rating';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,13 +89,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
     MatNativeDateModule,
     MatSnackBarModule
   ],
-  providers: [
-    UserService,
-    AuthService,
-    ApiProvider,
-    AlertService,
-
-  ],
+  providers: [UserService, AuthService, ApiProvider, AlertService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

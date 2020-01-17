@@ -1,4 +1,5 @@
 <div class="content" [ngClass]="{'hideClass':sent}">
     <div class="username">{{username}}</div>
-    <button (click)="addNewFriend()" mat-raised-button color="primary">Send request</button>
+    <button class="button" [disabled]="sent" (click)="addNewFriend()" mat-raised-button
+        color="primary">{{label}}</button>
 </div>

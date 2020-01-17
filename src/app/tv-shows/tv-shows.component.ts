@@ -14,9 +14,12 @@ import { Movie } from "../models/movie";
 })
 export class TvShowsComponent implements OnInit {
   public data: any[];
+  public filteredData: any[];
   public images: string[] = [];
   public type: string;
+  public title: string = "";
   public sortBy: string = "releaseYear";
+  public filterGenre: string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -26,12 +29,30 @@ export class TvShowsComponent implements OnInit {
     private alertService: AlertService
   ) {
     if (this.authService.token === "") {
-      // alert('You are not authenticate!');
       this.alertService.openSnackBar("You are not authenticated!", "Cancel");
       this.router.navigate([""]);
     } else {
       this.imagesUrl();
     }
+  }
+
+  getGenres() {
+    let genres = new Set();
+    // this.data.forEach(item => {
+    //   item.genres.forEach(genre => {
+    //     genres.add(genre);
+    //   });
+    // });
+    genres.add('Sci-fi');
+    genres.add('action');
+    genres.add('adventure');
+    genres.add('animation');
+    genres.add('comedy');
+    genres.add('mystery');
+    genres.add('drama');
+    genres.add('romance');
+
+    return genres;
   }
 
   public imagesUrl(): string[] {
@@ -41,6 +62,81 @@ export class TvShowsComponent implements OnInit {
     });
 
     return this.images;
+  }
+
+  performSortRequest($event) {
+    this.data = this.data.sort((x, y) => {
+      console.log($event);
+      if ($event.value === 'rating') {
+        if (this.type === "movies") {
+          if (x.rating < y.rating) {
+            return 1;
+          }
+          else {
+            if (x.rating > y.rating)
+              return -1;
+          }
+          return 0;
+        }
+        else {
+          if (x.id < y.id) {
+            return 1;
+          }
+          else {
+            if (x.id > y.id)
+              return -1;
+          }
+          return 0;
+        }
+      }
+      else {
+        if (+x.releaseYear < +y.releaseYear) {
+          return 1;
+        }
+        else {
+          if (+x.releaseYear > +y.releaseYear)
+            return -1;
+        }
+        return 0;
+      }
+    })
+  }
+
+  filterData() {
+    if (this.title !== "" && this.filterGenre === "") {
+      this.filteredData = this.data.filter(item => {
+        return item["name"].toLowerCase().includes(this.title.toLowerCase());
+      });
+    } else if (this.title === "" && this.filterGenre !== "") {
+      this.filteredData = this.data.filter(item => {
+        let foundGenre: boolean = false;
+        item["genres"].forEach(genre => {
+          if (genre.toLowerCase() === this.filterGenre.toLowerCase()) {
+            foundGenre = true;
+          }
+        });
+        return foundGenre;
+      });
+    } else if (this.title !== "" && this.filterGenre !== "") {
+      this.filteredData = this.data.filter(item => {
+        return item["name"].toLowerCase().includes(this.title.toLowerCase());
+      });
+      this.filteredData = this.filteredData.filter(item => {
+        let foundGenre: boolean = false;
+        item["genres"].forEach(genre => {
+          if (genre.toLowerCase() === this.filterGenre.toLowerCase()) {
+            foundGenre = true;
+          }
+        });
+        return foundGenre;
+      });
+    }
+  }
+
+  clearFilters() {
+    this.filteredData = this.data;
+    this.title = "";
+    this.filterGenre = "";
   }
 
   ngOnInit() {
@@ -69,6 +165,7 @@ export class TvShowsComponent implements OnInit {
           });
         });
         this.data = serverData;
+        this.filteredData = this.data;
         break;
       case "tvshows":
         serverData = [];
@@ -89,6 +186,7 @@ export class TvShowsComponent implements OnInit {
           });
         });
         this.data = serverData;
+        this.filteredData = this.data;
         break;
       default:
         alert("Something went wrong");
