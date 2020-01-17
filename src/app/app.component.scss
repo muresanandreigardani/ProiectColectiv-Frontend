@@ -46,6 +46,10 @@
     font-size: 1rem;
   }
 
+  .search { position: relative; }
+  
+  .search .trigger { position: absolute; right: 0; top: 25px }
+
   .placeholder {
     font-size: 1rem;
   }

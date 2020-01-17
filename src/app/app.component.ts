@@ -3,6 +3,8 @@ import { AuthService } from './services/authentication.service';
 import { LoginResponse } from './models/project.enum';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'
+import { ApiProvider } from './services/api-provide';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +13,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  searchNameText: String = "";
 
-  public constructor(private authService: AuthService, private router: Router) {
+  public constructor(private authService: AuthService, private router: Router, private apiProvider: ApiProvider) {
     // this.router.navigate(['']);
   }
 
@@ -35,5 +38,10 @@ export class AppComponent {
         this.router.navigate(['/user']);
       }
     }
+  }
+
+  onSubmit() {
+    console.log(this.searchNameText);
+    this.router.navigate(['/searchpage', this.searchNameText])
   }
 }

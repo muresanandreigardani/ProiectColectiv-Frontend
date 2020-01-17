@@ -9,10 +9,17 @@
       <a mat-button (click)="setTab('/movies')" target="_top"> Movies </a>
     </div>
     <div class="left-part-of-navbar">
-      <mat-form-field floatLabel="never">
-        <input class="search-input" matInput maxlength="100">
-        <mat-placeholder class="placeholder">Search</mat-placeholder>
-      </mat-form-field>
+      <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="search">
+          <mat-form-field floatLabel="never">
+            <input class="search-input" matInput maxlength="100" [(ngModel)]="searchNameText" name="name" #searchName>
+            <mat-placeholder class="placeholder">Search</mat-placeholder>
+          </mat-form-field>
+          <button type="submit" class="trigger"><img src="../assets/pngtree-vector-search-icon-png-image_320926.png"
+              height="10" width="10"></button>
+          <!-- <button type="submit" class="trigger">Search</button> -->
+        </div>
+      </form>
       <button class="account-btn" mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>person_pin</mat-icon>
       </button>
@@ -36,7 +43,6 @@
         <a mat-menu-item [routerLink]="['/calendar']"> Calendar </a>
         <a mat-menu-item [routerLink]="['/tvshows']"> TV Shows </a>
         <a mat-menu-item [routerLink]="['/create-contact']"> Movies </a>
-
       </mat-menu>
     </div>
   </mat-toolbar-row>

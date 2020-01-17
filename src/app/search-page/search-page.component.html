@@ -1,0 +1,9 @@
+<div class="app">
+    <div class="container">
+        <div class="grid-list">
+            <div *ngFor="let serial of filteredData">
+                <app-movie-card [item]="serial"></app-movie-card>
+            </div>
+        </div>
+    </div>
+</div>

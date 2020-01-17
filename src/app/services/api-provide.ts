@@ -10,7 +10,7 @@ import { TvSeries, Season } from '../models/tvSeries';
 
 @Injectable()
 export class ApiProvider {
-    public url = "http://192.168.1.6:8080/";
+    public url = "http://localhost:8080/";
     public httpOptions;
     public serials: TvSeries[] = [];
 
