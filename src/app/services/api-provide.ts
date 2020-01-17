@@ -327,7 +327,6 @@ export class ApiProvider {
         null,
         this.httpOptions
       );
-
   }
 
   public addInWatchLater(id: string, type: string) {
@@ -338,13 +337,13 @@ export class ApiProvider {
       Authorization: "Bearer " + this.authService.token
     });
 
-    if (type === "movie") {
-      return this.httpClient.get<any>(
-        this.url + `movie/${id}/watch-later`,
+    if (type === "movies") {
+      return this.httpClient.post<any>(
+        this.url + `movies/${id}/watch-later`,
         this.httpOptions
       );
-    } else if (type === "serie") {
-      return this.httpClient.get<any>(
+    } else {
+      return this.httpClient.post<any>(
         this.url + `series/${id}/watch-later`,
         this.httpOptions
       );
