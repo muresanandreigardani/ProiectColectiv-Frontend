@@ -5,7 +5,17 @@
     justify-content: space-between;
   }
 
-  .slides a {
-    width: 100%;
-  }
+  
 }
+
+::ng-deep .slides {
+    height: 100% !important;
+    width:15% !important;
+    margin-left: 40%;
+  }
+
+ ::ng-deep .slideshow-container{
+  
+   background-color: rgb(10, 16, 22) !important;
+
+ }
