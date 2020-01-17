@@ -42,6 +42,7 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { FriendsComponent } from './components/friends/friends.component';
 import { MovieDetailsPageComponent } from './components/movie-details-page/movie-details-page.component';
 import { AddFriendsComponent } from './components/add-friends/add-friends.component';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AddFriendsComponent } from './components/add-friends/add-friends.compon
     AddFriendsComponent
   ],
   imports: [
+    BarRatingModule,
     ReactiveFormsModule,
     MatDialogModule,
     MatCardModule,

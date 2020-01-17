@@ -1,6 +1,8 @@
 <div class="app">
   <br>
   <div class="header">
+
+
     <h1>{{this.item?.name}} &nbsp;<span>({{this.item?.releaseYear}})</span></h1>
     <div>
       <p class="material-icons">Current rating: {{this.item?.rating}}</p>
@@ -16,9 +18,10 @@
 
   </div>
   <div class="content-right">
+    <h3>Your rating:</h3>
+    <bar-rating [(rate)]="cssRate" [max]="10" (rateChange)="updateRating($event)"></bar-rating>
+    <br><br>
     <h2>Description</h2>
     <p>{{this.item?.description}}</p>
   </div>
-
-
 </div>
