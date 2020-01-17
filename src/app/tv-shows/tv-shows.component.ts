@@ -175,6 +175,7 @@ export class TvShowsComponent implements OnInit {
           data.forEach(series => {
             serverData.push({
               name: series["name"],
+              description: series["description"],
               director: series["director"],
               genres: series["genres"],
               releaseYear: series["releaseYear"],

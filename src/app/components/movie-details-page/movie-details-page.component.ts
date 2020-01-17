@@ -58,7 +58,8 @@ export class MovieDetailsPageComponent implements OnInit {
             director: movie["director"],
             genres: movie["genres"],
             image: movie["image"],
-            rating: movie["rating"]
+            rating: movie["rating"],
+            description: movie["description"]
           };
           //this.rating = movie["rating"];
         });
@@ -75,7 +76,8 @@ export class MovieDetailsPageComponent implements OnInit {
             noEpisodes: serie["noOfEpisodes"],
             noSeasons: serie["noOfSeasons"],
             image: serie["image"],
-            rating: serie["rating"]
+            rating: serie["rating"],
+            description: serie["description"]
           };
         });
         break;

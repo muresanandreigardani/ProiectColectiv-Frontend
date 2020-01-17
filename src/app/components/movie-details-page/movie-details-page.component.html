@@ -22,11 +22,13 @@
     <bar-rating [(rate)]="cssRate" [max]="10" (rateChange)="updateRating($event)"></bar-rating>
     <br><br>
     <h1>About</h1>
-    <h2><i>Genres:</i></h2>
+    <h2><i>~ Description:</i></h2>
+    <p>{{this.item?.description}}</p>
+    <h2><i>~ Genres:</i></h2>
     <p>{{this.item?.genres}}</p>
-    <h2><i>Duration:</i></h2>
+    <h2><i>~ Duration:</i></h2>
     <p>{{this.item?.duration}} minutes</p>
-    <h2><i>Director:</i></h2>
+    <h2><i>~ Director:</i></h2>
     <p>{{this.item?.director}} </p>
 
 
