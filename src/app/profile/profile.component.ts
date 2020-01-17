@@ -14,6 +14,7 @@ import { LoginResponse } from '../models/project.enum';
 })
 export class ProfileComponent implements OnInit {
   public user: User;
+  public name: String;
   public friends = [];
   public makeNewFriends = [];
   public requestFriends = [];
@@ -32,6 +33,8 @@ export class ProfileComponent implements OnInit {
   public url = '';
   @Input()
   public userToken: string;
+  areRequestFriends: boolean;
+  areNewFriends: boolean;
 
   constructor(
     private apiProvide: ApiProvider,
@@ -64,6 +67,7 @@ export class ProfileComponent implements OnInit {
     this.user.email = this.authService.activeUser;
     this.user.userRole = "User";
     this.user.name = this.authService.activeUser;
+    this.name = this.user.name.split('@')[0];
     this.userMovies = mockData.MOVIE_LIST;
     this.userTvSeries = mockData.TV_SERIES;
     this.movies = this.userMovies;
@@ -88,6 +92,7 @@ export class ProfileComponent implements OnInit {
       data.forEach(friend => {
         this.requestFriends.push(friend);
       });
+      this.areRequestFriends = this.requestFriends.length > 0;
     });
 
     this.apiProvide.getNewFriends(this.authService.activeUser).subscribe((data: any) => {
@@ -96,6 +101,7 @@ export class ProfileComponent implements OnInit {
       data.forEach(fr => {
         this.makeNewFriends.push(fr);
       })
+      this.areNewFriends = this.makeNewFriends.length > 0;
     });
 
     // this.friends = ["Andrei", "Marian", "Ana", "Daniel"];

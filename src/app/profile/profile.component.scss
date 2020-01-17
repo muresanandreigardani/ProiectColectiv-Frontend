@@ -26,6 +26,7 @@
 .movies {
   height: 370px;
   overflow: hidden;
+  margin-top:10vh;
 }
 
 .series {
@@ -49,11 +50,11 @@
   border: 1px solid aqua;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 1px 1px 2px whitesmoke, 0 0 25px blue, 0 0 5px darkblue;
+  //box-shadow: 1px 1px 2px whitesmoke, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .friends {
-  height: 430px;
+ // height: 430px;
   overflow: hidden;
 }
 
@@ -148,4 +149,14 @@ img {
 .user-details-picture {
   display: flex;
   justify-content: space-between;
+}
+
+.friend{
+  margin-bottom: 1vh;
+  border:10px solid grey;
+  border-radius: 20px;
+}
+
+::ng-deep .content{
+  padding: 15px 0 15px 0 !important;
 }

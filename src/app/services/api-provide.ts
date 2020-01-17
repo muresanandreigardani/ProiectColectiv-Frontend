@@ -14,7 +14,7 @@ import { Observable, throwError } from "rxjs";
 
 @Injectable()
 export class ApiProvider {
-  public url = "http://172.30.119.151:8080/";
+  public url = "http://localhost:8080/";
   public httpOptions;
   public serials: TvSeries[] = [];
 

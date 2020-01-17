@@ -1,8 +1,8 @@
 :host {
   .detail-for-carousel {
-    margin: 0 45px 0 45px;
+    margin: 20px 45px 0 45px;
 
-    .devider {
+    .divider {
       background-color: white;
       margin: 10px 0 15px 0;
     }
@@ -20,13 +20,21 @@
   }
 
   .carousel {
-    background-color: black;
+    background-color: #131F2B;
     margin: 0 20px;
     // height: 100%;
     max-height: 380px;
     overflow: hidden;
   }
 
+}
+
+
+.title{
+  color:grey;
+  font-size: 3vh;
+  font-weight: bold;
+  
 }
 
 ::ng-deep {
