@@ -14,7 +14,7 @@ import { Observable, throwError } from "rxjs";
 
 @Injectable()
 export class ApiProvider {
-  public url = "http://192.168.1.7:8080/";
+  public url = "http://172.30.119.151:8080/";
   public httpOptions;
   public serials: TvSeries[] = [];
 
@@ -279,6 +279,19 @@ export class ApiProvider {
       this.httpOptions
     );
   }
+  public getHistoryMovies() {
+    console.log("---------------------------------get History Movies");
+    console.log(this.authService.token);
+    this.httpOptions.headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + this.authService.token
+    });
+
+    return this.httpClient.get<any>(
+      this.url + "movies/history",
+      this.httpOptions
+    );
+  }
 
   public getDetailsSerie(name: string) {
     console.log("---------------------------------get Details Serie");
@@ -302,17 +315,19 @@ export class ApiProvider {
       Authorization: "Bearer " + this.authService.token
     });
 
-    if (type === "movie") {
-      return this.httpClient.get<any>(
-        this.url + `movie/${id}/history`,
+    if (type === "movies") {
+      return this.httpClient.post<any>(
+        this.url + `movies/${id}/history`,
+        null,
         this.httpOptions
       );
-    } else if (type === "serie") {
-      return this.httpClient.get<any>(
+    } else
+      return this.httpClient.post<any>(
         this.url + `series/${id}/history`,
+        null,
         this.httpOptions
       );
-    }
+
   }
 
   public addInWatchLater(id: string, type: string) {

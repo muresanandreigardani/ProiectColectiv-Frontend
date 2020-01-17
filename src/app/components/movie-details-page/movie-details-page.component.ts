@@ -11,21 +11,23 @@ export class MovieDetailsPageComponent implements OnInit {
   item: any;
   itemTitle: string;
   type: string;
+  rating: string;
   isAddedInHistory: boolean = false;
   isAddedInWatchLater: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private apiProvider: ApiProvider,
     private router: Router
-  ) {}
+  ) { }
 
   addInHistory() {
-    this.apiProvider.addInHistory(this.item.id, this.type);
+    console.log(this.item);
+    this.apiProvider.addInHistory(this.item.id, this.type).subscribe(data => console.log(data));
     this.isAddedInHistory = !this.isAddedInHistory;
   }
 
   addInWatchLater() {
-    this.apiProvider.addInWatchLater(this.item.id, this.type);
+    this.apiProvider.addInWatchLater(this.item.id, this.type).subscribe(data => console.log(data));
     this.isAddedInWatchLater = !this.isAddedInWatchLater;
   }
 
@@ -33,11 +35,14 @@ export class MovieDetailsPageComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.itemTitle = params["item"];
       this.type = params["typeItem"];
+      console.log(this.itemTitle);
+      console.log(this.type);
     });
 
     switch (this.type) {
-      case "movie":
+      case "movies":
         this.apiProvider.getDetailsMovie(this.itemTitle).subscribe(movie => {
+          console.log(movie);
           this.item = {
             id: movie["id"],
             name: movie["name"],
@@ -45,9 +50,10 @@ export class MovieDetailsPageComponent implements OnInit {
             releaseYear: movie["releaseYear"],
             director: movie["director"],
             genres: movie["genres"],
-            description: movie["description"],
+            description: movie["genres"],
             image: movie["image"]
           };
+          this.rating = movie["rating"];
         });
         break;
 

@@ -1,13 +1,13 @@
 <div class="app">
   <br>
   <div class="header">
-    <h1>{{this.item.name}} &nbsp;<span>({{this.item.releaseYear}})</span></h1>
+    <h1>{{this.item?.name}} &nbsp;<span>({{this.item?.releaseYear}})</span></h1>
     <div>
-      <p class="material-icons">Current rating</p>
+      <p class="material-icons">Current rating: {{rating}}</p>
     </div>
   </div>
   <div class="content-left">
-    <img src="{{this.item.image}}">
+    <img src="{{this.item?.image}}">
 
     <button mat-raised-button
       (click)="addInHistory()">{{this.isAddedInHistory ? "Added in History" : "Add in History"}}</button>
@@ -17,7 +17,7 @@
   </div>
   <div class="content-right">
     <h2>Description</h2>
-    <p>{{this.item.description}}</p>
+    <p>{{this.item?.description}}</p>
   </div>
 
 

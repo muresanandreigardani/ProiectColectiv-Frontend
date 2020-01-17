@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.user = new User();
     this.user.id = "123";
-    this.user.email = "asd@gmail.com";
+    this.user.email = this.authService.activeUser;
     this.user.userRole = "User";
     this.user.name = this.authService.activeUser;
     this.userMovies = mockData.MOVIE_LIST;
@@ -69,7 +69,10 @@ export class ProfileComponent implements OnInit {
     this.movies = this.userMovies;
     this.tvSeries = this.userTvSeries;
 
-    this.history = mockData.MOVIE_LIST;
+    this.apiProvide.getHistoryMovies().subscribe((movies: any) => {
+      console.log(movies);
+      this.history = movies;
+    })
 
     this.apiProvide.getFriends(this.authService.activeUser).subscribe((data: any) => {
       console.log(data);

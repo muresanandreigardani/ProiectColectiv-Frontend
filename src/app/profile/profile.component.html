@@ -19,7 +19,7 @@
     <input id="fileInput" type='file' (change)="onSelectFile($event)">
     <button *ngIf="url" (click)="delete()">delete</button>
 
-    <div class="history" [class.display]="showHistory">
+    <div class="history">
       <app-carousel title="History" [movieList]="history"></app-carousel>
     </div>
     <div>
