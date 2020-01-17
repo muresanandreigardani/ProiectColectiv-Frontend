@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   public movies: Movie[];
   public tvSeries: TvSeries[];
   public images: string[] = [];
+  public timeSpentWatching=0;
 
   public history: any[];
 
@@ -76,6 +77,10 @@ export class ProfileComponent implements OnInit {
     this.apiProvide.getHistoryMovies().subscribe((movies: any) => {
       console.log(movies);
       this.history = movies;
+      this.timeSpentWatching = 0;
+      movies.forEach( movie => {
+        this.timeSpentWatching += movie.duration;
+      });
     })
 
     this.apiProvide.getFriends(this.authService.activeUser).subscribe((data: any) => {
