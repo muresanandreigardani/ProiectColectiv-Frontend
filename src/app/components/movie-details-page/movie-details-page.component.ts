@@ -18,7 +18,7 @@ export class MovieDetailsPageComponent implements OnInit {
     private route: ActivatedRoute,
     private apiProvider: ApiProvider,
     private router: Router
-  ) {}
+  ) { }
 
   updateRating(rating: number) {
     this.apiProvider.giveRating(this.item.id, rating).subscribe(data => { console.log(data); this.ngOnInit() });
@@ -57,9 +57,9 @@ export class MovieDetailsPageComponent implements OnInit {
             releaseYear: movie["releaseYear"],
             director: movie["director"],
             genres: movie["genres"],
-            description: movie["genres"],
             image: movie["image"],
-            rating: movie["rating"]
+            rating: movie["rating"],
+            description: movie["description"]
           };
           //this.rating = movie["rating"];
         });
@@ -76,7 +76,8 @@ export class MovieDetailsPageComponent implements OnInit {
             noEpisodes: serie["noOfEpisodes"],
             noSeasons: serie["noOfSeasons"],
             image: serie["image"],
-            rating: serie["rating"]
+            rating: serie["rating"],
+            description: serie["description"]
           };
         });
         break;
