@@ -33,6 +33,7 @@ export class TvShowsComponent implements OnInit {
       this.router.navigate([""]);
     } else {
       this.imagesUrl();
+      window.scrollTo(0, 0);
     }
   }
 

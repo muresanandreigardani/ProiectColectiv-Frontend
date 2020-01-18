@@ -66,6 +66,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.user = new User();
     this.user.id = "123";
     this.user.email = this.authService.activeUser;
